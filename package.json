@@ -1,0 +1,27 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "gulpFile.js",
+  "scripts": {
+  },
+  "author": "humorHan",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "*",
+    "style-loader": "*",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "css-loader": "*",
+    "less-loader": "*",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.19.0",
+    "webpack-stream": "*",
+    "gulp": "^3.9.1",
+    "gulp-util": "*",
+    "webpack": "1.13.1",
+    "tmodjs-loader": "*",
+    "file-loader":"*",
+    "url-loader": "*",
+    "script-loader": "*"
+  }
+}
