@@ -1,17 +1,21 @@
 /**
  * Created by humorHan on 16/10/31.
  */
-require("./carousel.less");
-var $ = require("jquery-2.2.4.js");
-var carouselTpl = require('./tpl/carousel.tpl');
+require("./carousel.scss");
+require('template-helper.js');
+var config = require("config/config.js");
+var carouselTpl = require('./carousel.tpl');
 
-function Carousel(dom, carouselSum, hasCarouselNav, style, changeTime, animationTime) {
-    this.dom = $("." + dom);
-    this.carouselSum = carouselSum;
-    this.hasOwnProperty = hasCarouselNav;
-    this.style = style;
-    this.changeTime = changeTime || 3000;
-    this.animationTime = animationTime || 500;
+function Carousel(options) {
+    this.dom = $("." + options.dom);
+    this.data = options.data;
+    this.carouselSum = options.data.length;
+    this.height = this.dom.outerHeight();
+    this.width = this.dom.outerWidth();
+    this.hasNav = options.hasNav || true;
+    this.hasPreNext = options.hasPreNext || false;
+    this.changeTime = options.changeTime || 4000;
+    this.animationTime = options.animationTime || 500;
     this.index = 0; //显示图片的索引
     this.timer = null; //定时器
     this.initDom();
@@ -21,13 +25,25 @@ function Carousel(dom, carouselSum, hasCarouselNav, style, changeTime, animation
 Carousel.prototype = {
     //不参与逻辑点
     initStatic: function () {
+        this.dom.find(".carousel-wrapper").css({
+            height: this.height,
+            width: this.width
+        });
         this.dom.find(".carousel-img").css({
-            'width': this.carouselSum * this.style.width
+            // 临时修订方案
+            'width': this.carouselSum * (this.width % 10 >= 9 ? this.width + 1 : this.width)
         });
     },
     initDom: function () {
-        this.dom.html(carouselTpl([1, 2, 3]));
-        this.dom.find(".carousel-wrapper").css(this.style);
+        if (this.dom.length === 0) {
+            console.log('没有找到要初始化轮播图的节点');
+            return false;
+        }
+        this.dom.html(carouselTpl({
+            data: this.data,
+            hasNav: this.hasNav,
+            hasPreNext: this.hasPreNext
+        }));
         this.initStatic();
         this.initTimer();
     },
@@ -52,13 +68,14 @@ Carousel.prototype = {
             this.index = 0;
             //无缝处理
             this.dom.find(".carousel-wrapper").css({
-                background: 'url(/test/bundle/img/' + (this.carouselSum) + '.jpeg)'
+                background: 'url(' + config.SOURCE + this.data[this.data.length - 1].image_key + ')'
             });
-            this.dom.find(".carousel-img").css("left", this.style.width);
+            this.dom.find(".carousel-img").css("left", this.width);
         }
         this.changeNav();
-        this.dom.find(".carousel-img").stop().animate({
-            'left': -this.style.width * this.index
+        //直接执行到末尾状态并清空队列
+        this.dom.find(".carousel-img").stop(true, true).animate({
+            'left': -this.width * this.index
         }, this.animationTime);
     },
     previous: function () {
@@ -69,13 +86,13 @@ Carousel.prototype = {
             this.index = this.carouselSum - 1;
             //无缝处理
             this.dom.find(".carousel-wrapper").css({
-                background: 'url(/test/bundle/img/' + 1 + '.jpeg)'
+                background: 'url(' + config.SOURCE + this.data[0].image_key + ')'
             });
-            this.dom.find(".carousel-img").css("left", -this.style.width * (this.index + 1));
+            this.dom.find(".carousel-img").css("left", -this.width * (this.index + 1));
         }
         this.changeNav();
         this.dom.find(".carousel-img").stop().animate({
-            'left': -this.style.width * this.index
+            'left': -this.width * this.index
         }, this.animationTime);
     },
     //显示要显示的nav
@@ -88,7 +105,7 @@ Carousel.prototype = {
     goTo: function () {
         clearInterval(this.timer);
         this.dom.find(".carousel-img").stop().animate({
-            'left': -this.style.width * this.index
+            'left': -this.width * this.index
         }, this.animationTime, this.initTimer());
     },
     initBtns: function () {
@@ -113,15 +130,18 @@ Carousel.prototype = {
 /**
  * 轮播图
  * @param dom               轮播图节点
- * @param carouselSum       轮播图有几张
- * @param hasCarouselNav    轮播图是否存在下面的---焦点切换
- * @param style             轮播图宽高 (obj)
- * @param changeTime        轮播图切换时间间隔 (默认3000 ms)
- * @param animationTime     轮播图切换动画时间 (默认300 ms)
+ * @param data              轮播图数据
+ * @param hasNav            轮播图下面的焦点切换 (默认存在)
+ * @param hasPreNext        轮播图上一页下一页切换 (默认不存在)
+ * @param changeTime        轮播图切换时间间隔 (默认3500 ms)
+ * @param animationTime     轮播图切换动画时间 (默认500 ms)
  */
 
-//TODO 传参data 赋值图片地址到tpl内li上 无缝处理取值赋值
-//TODO 甚至传参data后 轮播图的张数已经确定 所以传data替代张数参数也可以
-module.exports = function (dom, carouselSum, hasCarouselNav, style, changeTime, animationTime) {
-    return new Carousel(dom, carouselSum, hasCarouselNav, style, changeTime, animationTime);
+/*
+module.exports = function (dom, data, hasNav, hasPreNext, changeTime, animationTime) {
+    return new Carousel(dom, data, hasNav, hasPreNext, changeTime, animationTime);
+};*/
+
+module.exports = function (options) {
+    return new Carousel(options);
 };
