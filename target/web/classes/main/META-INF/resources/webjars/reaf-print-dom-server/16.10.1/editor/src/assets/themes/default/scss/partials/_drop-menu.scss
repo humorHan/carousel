@@ -1,0 +1,80 @@
+.edui-popup {
+  position: absolute;
+  background: #fff;
+  user-select: none;
+  cursor: default;
+}
+
+.edui-combox-body {
+  outline: 1px solid #ccc;
+
+  .edui-button-body {
+    width: 60px;
+    height: $icon-height;
+    font-size: 14px;
+    line-height: $icon-height;
+    padding-left: 5px;
+    white-space: nowrap;
+    cursor: default;
+  }
+}
+
+.edui-list,
+.edui-menu-body {
+  .edui-state-hover {
+    background-color: $item-hover-color;
+    outline: 1px solid darken($item-hover-color, 20%);
+  }
+}
+
+.edui-popup-content {
+  padding: 3px;
+  border: 1px solid #ccc;
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: $popup-shadow;
+}
+
+.edui-listitem-label {
+  text-indent: 5px;
+
+  .edui-for-p {
+    font-size: 22px;
+    line-height: 27px;
+  }
+  .edui-for-h1 {
+    font-weight: bolder;
+    font-size: 32px;
+  }
+  .edui-for-h2 {
+    font-weight: bolder;
+    font-size: 27px;
+  }
+  .edui-for-h3 {
+    font-weight: bolder;
+    font-size: 19px;
+  }
+  .edui-for-h4 {
+    font-weight: bolder;
+    font-size: 16px;
+  }
+  .edui-for-h5 {
+    font-weight: bolder;
+    font-size: 13px;
+  }
+  .edui-for-h6 {
+    font-weight: bolder;
+    font-size: 12px;
+  }
+}
+
+.edui-listitem-label,
+.edui-menuitem-label {
+  padding: 5px;
+  min-width: 120px;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.2 !important;
+  white-space: nowrap;
+  cursor: default;
+}

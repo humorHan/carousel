@@ -1,0 +1,203 @@
+.remind {
+    line-height: 40px;
+    font-size: 18px;
+    color: #66cc66;
+    padding-left: 40px;
+    background: url("/assets/img/yes.png") no-repeat;
+    background-position: 0px 5px;
+}
+
+.pay-order-msg {
+    height: 40px;
+    line-height: 40px;
+    background: #FEF5F2;
+    margin: 40px 0px;
+    padding: 20px 30px;
+    overflow: hidden;
+}
+
+.pay-order-msg div {
+    line-height: 20px;
+    color: #333;
+}
+
+.pay-order-msg .pay-right {
+    float: right;
+}
+
+.pay-order-msg .pay-right span {
+    font-size: 18px;
+    color: #f54404;
+}
+
+.pay-order-msg .pay-right a {
+    font-size: 12px;
+    color: #f54404;
+    margin-left: 60px;
+}
+
+.pay-order-msg .pay-right a:hover {
+    color: #f78f68;
+}
+
+.pay-order-msg .remind {
+    float: left;
+    line-height: 40px;
+    margin-right: 150px;
+}
+
+.pay-order-msg .center .time {
+    padding-top: 0px;
+    font-size: 12px;
+    color: #666;
+}
+
+.confirm-box .form {
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form .form-title {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ddd;
+}
+
+.form .form-title span {
+    display: inline-block;
+    line-height: 40px;
+    border-bottom: 2px solid #252535;
+    padding: 0 14px;
+    color: #333;
+    font-size: 16px;
+}
+
+.form-body {
+    margin: 30px 0;
+}
+
+.pay-method {
+    display: inline-block;
+    color: #666;
+    width: 120px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border: 1px solid #333;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.pay-method:hover {
+    background: #FEF5F2;
+    border-color: #f54404;
+}
+
+.selected {
+    color: #333;
+    background: #FEF5F2;
+    border: 2px solid #f54404;
+}
+
+.pay-btn {
+    display: block;
+    font-size: 20px;
+    width: 200px;
+    text-align: center;
+    height: 58px;
+    line-height: 58px;
+    color: #fff;
+    background: #f54404;
+    margin: 30px 40px 60px;
+    cursor: pointer;
+}
+
+.pay-btn:hover {
+    background: #f78f68;
+}
+
+.modal .modal-head div {
+    font-size: 16px;
+    color: #333;
+}
+
+.modal .modal-head div span {
+    font-size: 20px;
+    color: #f54404;
+}
+
+#wechat_qrcode {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.tool-tip {
+    text-align: center;
+    color: #f54404;
+    margin-top: 10px;
+}
+
+.divide-bar {
+    width: 400px;
+}
+
+.pay-success-msg {
+    line-height: 40px;
+    background: #FEF5F2;
+    margin-top: 40px;
+    padding: 20px 30px;
+    overflow: hidden;
+    height: 260px;
+    text-align: center;
+}
+
+.pay-content {
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 70px;
+    color: #333;
+}
+
+.order-num {
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.order-sum span {
+    font-size: 18px;
+    color: #f54404;
+}
+
+.pay-success-foot {
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 80px;
+    margin-top: 10px;
+}
+
+.jump-tip {
+    color: #666;
+    margin-right: 30px;
+}
+
+.jump-tip span {
+    color: #333;
+}
+
+.pay-success-foot .link {
+    color: #f54404;
+}
+
+.pay-success-foot .link:hover {
+    color: #f78f68;
+}
+
+.line {
+    height: 0px;
+    width: 0px;
+    border-left: 1px solid #f54404;
+    margin: 0px 10px;
+}

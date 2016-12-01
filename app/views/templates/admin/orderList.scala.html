@@ -1,0 +1,119 @@
+@()(implicit pageParam: views.params.PageParam)
+@import views.html.templates._
+
+@main("订单管理") {
+    <!-- css 们 -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/home.css">
+    <link rel="stylesheet" href="http://7bvan6.com2.z0.glb.qiniucdn.com/bootstrap-datetimepicker.min.css"/>
+} {
+    <!-- 网页主体 -->
+    <div class="box">
+        <div class="container">
+            <div class="sidebar">
+                <a class="sidebar-title"><img src="/assets/img/home_help.png">管理中心</a>
+                <a class="sidebar-link" href="/">商品管理</a>
+                <a class="sidebar-link active" href="/admin/order/list">订单管理</a>
+                <a class="sidebar-link" href="/">首页管理</a>
+                <a class="sidebar-title"><img src="/assets/img/home_order.png">订单中心</a>
+                <a class="sidebar-link" href="/home">我的订单</a>
+                <a class="sidebar-title"><img src="/assets/img/home_account.png">账户中心</a>
+                <a class="sidebar-link" href="/">修改密码</a>
+                <a class="sidebar-link" href="/">换绑手机</a>
+                <a class="sidebar-title"><img src="/assets/img/home_help.png">其他</a>
+                <a class="sidebar-link" href="/faq/account">帮助中心</a>
+            </div>
+            <div class="main-area">
+                <div class="search-query">
+                    <a id="query_time">批量订单查询</a>
+                    <a id="query_num" class="active">按订单号查询</a>
+                </div>
+                <div class="search-form" id="query_time_form">
+                    <div class="form-control">
+                        <label>订单提交时间</label>
+                        <input class="form-input" type="text" id="search_starttime" readonly>
+                        <input class="form-input" type="text" id="search_endtime" readonly>
+                    </div>
+                    <div class="form-control">
+                        <label>订单状态</label>
+                        <select class="form-input">
+                            <option value="全部">全部</option>
+                            <option value="订单已提交">订单已提交</option>
+                            <option value="已付款">已付款</option>
+                            <option value="商家已接单">商家已接单</option>
+                            <option value="订单已完成">订单已完成</option>
+                            <option value="订单已取消">订单已取消</option>
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <label>订单支付方式</label>
+                        <select class="form-input">
+                            <option value="全部">全部</option>
+                            <option value="在线支付">在线支付</option>
+                            <option value="货到付款">货到付款</option>
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <label>订单金额</label>
+                        <input class="form-input" type="text" id="min_sum">至
+                        <input class="form-input" type="text" id="max_sum">
+                    </div>
+                </div>
+                <div class="search-form" id="query_num_form">
+                    <div class="form-control">
+                        <label>订单号</label>
+                        <input class="form-input" type="text" id="query_order_id">
+                        <span id="query_order_id_tip" class="tip input-tip">订单号为11位数字</span>
+                    </div>
+                </div>
+                <a class="query-btn" id="admin_query_order" data-status="query_num">查询</a>
+                <div class="query-result">
+                    <table class="query-table">
+                        <thead>
+                            <td>下单时间</td>
+                            <td>订单号</td>
+                            <td>订单金额</td>
+                            <td>支付方式</td>
+                            <td>收货人信息</td>
+                            <td>最近操作时间</td>
+                            <td>订单状态/文件上传状态</td>
+                        </thead>
+                        <tbody id="admin_order_list"></tbody>
+                    </table>
+                    <div class="pagination" id="show_pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/x-jquery-tmpl" id="template">
+    {{each(i,order) orders}}
+        <tr>
+            <td>${changeTimeFormat(order.create_time)}</td>
+            <td>${order.id}</td>
+            <td>${total(order)}</td>
+            <td>${order.payment === 'ONLINE'?'在线支付':'货到付款'}</td>
+            <td>
+                ${order.consignee_name} ${order.consignee_phone}
+                <div>
+                    ${order.address}
+                </div>
+            </td>
+            <td>${changeTimeFormat(order.last_operate_time)}</td>
+            <td class="status">
+                <a>${status_t(order.status)}</a>
+                {{if order.all_files_uploaded}}
+                    <a>全部已上传</a>
+                {{else}}
+                    <a class="warning">待上传</a>
+                {{/if}}
+                <a class="link" href="/admin/order?id=${order.id}" target="_blank">查看订单详情</a>
+            </td>
+        </tr>
+    {{/each}}
+    </script>
+} {
+    <!-- js 们 -->
+    <script src="http://7bvan6.com2.z0.glb.qiniucdn.com/bootstrap-datetimepicker.min.js"></script>
+    <script src="http://7bvan6.com2.z0.glb.qiniucdn.com/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.tmpl.min.js"></script>
+    <script src="/assets/js/admin/index.js" type="text/javascript"></script>
+}

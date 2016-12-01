@@ -1,0 +1,303 @@
+@()(implicit pageParam: views.params.PageParam)
+
+@main("确认订单") {
+    <!-- css 们 -->
+    <link rel="stylesheet" href="http://7bvan6.com2.z0.glb.qiniucdn.com/chosen.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/confirm-order.css">
+} {
+    <!-- 网页主体 -->
+    <div class="confirm-box box">
+        <div class="container">
+            <div class="confirm-banner"><img src="/assets/img/flow_confirm.png"></div>
+            <div class="form">
+                <div class="form-title">
+                    <span class="form-title-span">收货信息</span>
+                </div>
+                <div class="form-body">
+                    <div id="edit_receiver_box">
+                        <div class="form-control">
+                            <label for="receiver_name" class="form-label">收件人姓名</label>
+                            <input id="receiver_name" type="text" class="form-input" placeholder="请准确填写真实姓名">
+                            <span class="tip">*</span><span id="receiver_name_tip" class="tip input-tip">收货人姓名1-25个字</span>
+                        </div>
+                        <div class="form-control">
+                            <label for="receiver_location" class="form-label">地址</label>
+                            <select id="receiver_province" class="form-input select" data-placeholder="请选择">
+                                <option value="110100" class="selected">北京</option>
+                            </select>
+                            <select id="receiver_city" class="form-input select" data-placeholder="请选择">
+                                <option></option>
+                            </select>
+                            <select id="receiver_county" class="form-input select" data-placeholder="请选择">
+                                <option></option>
+                            </select><span class="tip">*</span><span id="receiver_region_tip" class="tip input-tip">请选择配送范围</span>
+                        </div>
+                        <div class="form-control">
+                            <label for="receiver_address" class="form-label">详细地址</label>
+                            <input id="receiver_address" type="text" class="form-input" placeholder="请填写详细地址">
+                            <span class="tip">*</span><span id="receiver_address_tip" class="tip input-tip">详细地址不超过50字</span>
+                        </div>
+                        <div class="form-control">
+                            <label for="receiver_code" class="form-label">邮编</label>
+                            <input id="receiver_code" class="form-input" placeholder="请输入邮编">
+                            <span id="receiver_code_tip" class="tip input-tip">请输入正确的邮编</span>
+                        </div>
+                        <div class="form-control">
+                            <label for="receiver_phone" class="form-label">联系电话</label>
+                            <input id="receiver_phone" type="text" class="form-input" placeholder="请填写常用手机号码">
+                            <span class="tip">*</span><span id="receiver_phone_tip" class="tip input-tip">请填写正确的手机号码</span>
+                        </div>
+                        <a id="save_receiver_btn" class="save-btn">保存收货地址</a>
+                    </div>
+                    <div id="display_receiver_box" style="display: none;">
+                        <div class="receiver-msg">
+                            <div id="edit_receiver_btn" class="edit-receiver">修改</div>
+                            <div class="receiver-show-item">
+                                <span id="display_receiver_name"></span>
+                                <span style="display:inline-block; margin-left: 20px;" id="display_receiver_phone"></span>
+                            </div>
+                            <div class="receiver-show-item">
+                                <span id="display_receiver_province">北京</span>
+                                <span id="display_receiver_city"></span>
+                                <span id="display_receiver_county"></span>
+                                <span id="display_receiver_address"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form">
+                <div class="form-title">
+                    <span class="form-title-span">支付方式</span>
+                </div>
+                <div class="form-body" id="change_pay_method">
+                    <a class="pay-method selected" data-value="ONLINE">在线支付</a>
+                    <a class="pay-method" data-value="CASH_ON_DELIVERY">货到付款</a>
+                </div>
+            </div>
+
+            <div class="form">
+                <div class="form-title">
+                    <span class="form-title-span">商品清单</span>
+                    <span class="return-cart"><a href="/cart">< 返回购物车修改商品</a></span>
+                </div>
+                <div class="form-body">
+                    <div class="shipping-method">
+                        <div class="shipping-title">配送方式</div>
+                        <a class="pay-method selected">普通快递</a>
+                        <div class="shipping-describe">运费10元，满200元免运费</div>
+                    </div>
+                    <table class="cart-table-table">
+                       <tbody id="product_item" class="cart-table-tb"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="form">
+                <div class="form-title">
+                    <span class="form-title-span">其他信息</span>
+                </div>
+                <div class="form-body">
+                    <div class="extra-service">
+                        <a class="check-box checked" id="need_contact">
+                            <input type="checkbox">
+                            <label for="need_contact">需求联系人即收货人？</label>
+                        </a>
+                        <span>（按需定制或设计出现问题时客服MM将与需求联系人沟通）</span>
+                    </div>
+                    <div id="need_contact_detail" class="extra-detail">
+                        <div class="form-control">
+                            <label for="contact_name" class="form-label">联系人姓名</label>
+                            <input id="contact_name" class="form-input" placeholder="请填写联系人姓名"><span class="tip">*</span>
+                            <span class="tip input-tip" id="contact_name_tip">联系人姓名1-25个字</span>
+                        </div>
+                        <div class="form-control">
+                            <label for="contact_phone" class="form-label">联系人手机</label>
+                            <input id="contact_phone" class="form-input" placeholder="请填写联系人手机"><span class="tip">*</span>
+                            <span class="tip input-tip" id="contact_phone_tip">请填写正确的手机号</span>
+                        </div>
+                    </div>
+                    <div class="form-control show-out">
+                        <label for="contact_qq" class="form-label">联系人QQ</label>
+                        <input id="contact_qq" class="form-input" placeholder="QQ方便客服MM与您沟通">
+                        <span class="tip input-tip" id="contact_qq_tip">请填写正确的QQ号</span>
+                    </div>
+
+                    <div class="extra-service invoice">
+                        <a class="check-box" id="need_invoice">
+                            <input type="checkbox">
+                            <label for="need_invoice">需要发票</label>
+                        </a>
+                    </div>
+                    <div id="need_invoice_detail" class="extra-detail">
+                        <div class="form-control">
+                            <label for="receiver_invoice" class="form-label">发票抬头</label>
+                            <input id="receiver_invoice" class="form-input" placeholder="请填写发票抬头">
+                            <span class="tip input-tip" id="receiver_invoice_tip">发票抬头不超过50字</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-foot table-box">
+                <table class="foot-table foot-left">
+                    <tr>
+                        <td class="receiver-item">寄送至：</td>
+                        <td id="confirm_address">
+                            <span id="confirm_receiver_province">北京</span>
+                            <span id="confirm_receiver_city"></span>
+                            <span id="confirm_receiver_county"></span>
+                            <span id="confirm_receiver_address"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="receiver-item">收货人：</td>
+                        <td id="confirm_msg"></td>
+                    </tr>
+                    <tr>
+                        <td class="receiver-item text-item">备注信息：</td>
+                        <td>
+                            <textarea id="receiver_remark"></textarea>
+                            <span class="tip input-tip" id="receiver_remark_tip">备注不超过500字</span>
+                        </td>
+                    </tr>
+                </table>
+                <table class="foot-table foot-right">
+                    <tr>
+                        <td class="receiver-item">商品金额：</td>
+                        <td id="confirm_amount"></td>
+                    </tr>
+                    <tr>
+                        <td class="receiver-item">配送费用：</td>
+                        <td id="confirm_freight"></td>
+                    </tr>
+                    <tr>
+                        <td class="receiver-item">应付金额：</td>
+                        <td class="all-sum" id="confirm_total"></td>
+                    </tr></table>
+            </div>
+            <div class="order-foot">
+                <div class="foot-submit">
+                    <div class="submit-money">应付金额：<span id="confirm_total_show"></span></div>
+                    <a class="save-btn" id="create_order">提交订单</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-layer"></div>
+    <div class="modal" id="demand_detail">
+        <div class="modal-head">
+            <a class="close"></a>
+            <div>按需定制商品详情</div>
+        </div>
+        <div class="modal-body">
+            <div class="divide-bar"></div>
+            <table class="product-detail">
+                <tr>
+                    <td class="product-item">产品名称：</td>
+                    <td id="demand_name"></td>
+                </tr>
+                <tr>
+                    <td class="product-item">数量：</td>
+                    <td id="demand_num"></td>
+                </tr>
+                <tr>
+                    <td class="product-item">产品尺寸：</td>
+                    <td id="demand_size"></td>
+                </tr>
+                <tr>
+                    <td class="product-item">材质：</td>
+                    <td id="demand_caizhi"></td>
+                </tr>
+                <tr>
+                    <td class="product-item">其他要求：</td>
+                    <td id="demand_others"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="modal-foot"></div>
+    </div>
+    <script type="text/x-jquery-tmpl" id="product_template">
+    {{each(i,item) items}}
+        <tr data-id="${item.id}">
+            <td class="item-product">
+                <div>
+                    <div class="item-product-img">
+                        <a href="/product?id=${item.product_id}#${item.brief}"><img src="${img_link+item.image_key}?imageView2/1/w/80/h/80/"></a>
+                    </div>
+                    <div class="item-product-describe">
+                        <a href="/product?id=${item.product_id}#${item.brief}">
+                            <p class="title">${item.title}</p>
+                            <p class="describe">${item.brief}</p>
+                        </a>
+                    </div>
+                </div>
+            </td>
+            <td class="item-price">
+                <div>${processData.processPrice(item.price)}</div>
+            </td>
+            <td class="item-num">x${item.quantity}</td>
+            <td class="item-deal">
+                {{if item.file}}
+                <a class="deal-block upload-file" href="${img_link+item.file.file_key}" target="_blank" title="${item.file.file_name}" style="display:block">${item.file.file_name}</a>
+                {{else}}
+                <a class="deal-block upload-file" href="" target="_blank"></a>
+                {{/if}}
+                <a class="deal-block add-file">上传文件<input class="hide-file" type="file"></a>
+                {{if item.file}}
+                <a class="deal-block delete-file" style="display:block">删除</a>
+                {{else}}
+                <a class="deal-block delete-file">删除</a>
+                {{/if}}
+            </td>
+        </tr>
+    {{/each}}
+    {{if custom_items.length >0}}
+        <tr class="on-demand">
+            <td colspan="6">
+                <div class="on-demand-title">按需定制商品<span>（该类商品暂无价格，提交订单后客服MM将与您进一步沟通并确定价格）</span></div>
+            </td>
+        </tr>
+        {{each(i,custom) custom_items}}
+            <tr data-id="${custom.id}" data-detail="${JSON.stringify(custom.detail)}">
+                <td class="item-product">
+                    <div>
+                        <div class="item-product-img">
+                            <a class="demand-pop"><img src="${img_link+custom.image_key}?imageView2/1/w/80/h/80/"></a>
+                        </div>
+                        <div class="item-product-describe">
+                            <a class="demand-pop">
+                                <p class="title">${custom.title}</p>
+                                <p class="describe">${custom.brief}</p>
+                            </a>
+                        </div>
+                    </div>
+                </td>
+                <td class="item-price">
+                    <div>暂无</div>
+                </td>
+                <td class="item-num">x1</td>
+                <td class="item-deal">
+                    {{if custom.file}}
+                    <a class="deal-block upload-file" href="${img_link+custom.file.file_key}" target="_blank" title="${custom.file.file_name}" style="display:block">${custom.file.file_name}</a>
+                    {{else}}
+                    <a class="deal-block upload-file" href="" target="_blank"></a>
+                    {{/if}}
+                    <a class="deal-block add-file">上传文件<input class="hide-file" type="file"></a>
+                    {{if custom.file}}
+                    <a class="deal-block delete-file" style="display:block">删除</a>
+                    {{else}}
+                    <a class="deal-block delete-file">删除</a>
+                    {{/if}}
+                </td>
+            </tr>
+        {{/each}}
+    {{/if}}
+    </script>
+} {
+    <!-- js 们 -->
+    <script src="http://7bvan6.com2.z0.glb.qiniucdn.com/chosen.jquery.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="/assets/js/common.js"></script>
+    <script type="text/javascript" src="/assets/js/confirm-order.js"></script> 
+}

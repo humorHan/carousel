@@ -1,0 +1,34 @@
+@()(implicit pageParam: views.params.PageParam)
+@import views.html.templates._
+
+@main("联系我们") {
+	<link rel="stylesheet" type="text/css" href="/assets/css/sidebar.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/help.css">
+} {
+	<div class="box helper_box">
+        <div class="container">
+        	<div class="helper_layout">
+				<dl id="sidebar" class="sidebar">
+				    <dt><a href="javascript:;">关于我们</a></dt>
+				    <dd><a href="/about/introduction">公司简介</a></dd>
+				    <dd><a href="/about/contactus" class="sel">联系我们</a></dd>
+				    <dd><a href="/about/services">服务声明</a></dd>
+				</dl>
+				<div class="helper_right_container">
+					<div class="helper_title"><span>联系我们</span></div>
+					<div class="content_container">
+						<div>
+							<p>北京小酱油文化传媒有限公司</p>
+							<p>Tel: 400-038-6898</p>
+							<p>Web: <a href="http://www.soyyin.com/" target="_blank">www.soyyin.com</a></p>
+							<p>Add: 北京市海淀区海淀西大街36号昊海楼4层411室</p>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+} {
+<!-- js 们 -->
+}

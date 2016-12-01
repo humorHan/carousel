@@ -1,0 +1,68 @@
+@()(implicit pageParam: views.params.PageParam)
+
+@main("我的订单") {
+    <!-- css 们 -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/home.css">
+} {
+    <!-- 网页主体 -->
+    <div class="box">
+        <div class="container">
+            <div class="sidebar">
+                <a class="sidebar-title order"><img src="/assets/img/home_order.png">订单中心</a>
+                <a class="sidebar-link active" href="/home">我的订单</a>
+                <a class="sidebar-title account"><img src="/assets/img/home_account.png">账户中心</a>
+                <a class="sidebar-link" href="/">修改密码</a>
+                <a class="sidebar-link" href="/">换绑手机</a>
+                <a class="sidebar-title help"><img src="/assets/img/home_help.png">其他</a>
+                <a class="sidebar-link" href="/faq/account">帮助中心</a>
+            </div>
+            <div class="main-area">
+                <div class="search-query">
+                    <a id="" class="active" data-status="">全部订单</a>
+                    <a id="" data-status="SUBMITTED">待商家接单</a>
+                    <a id="" data-status="DELIVERY_CONFIRMED">待支付</a>
+                    <a id="" data-status="FINISHED">已完成</a>
+                    <a id="" data-status="CANCELED">已取消</a>
+                </div>
+                <div class="order-list-box" id="my_order_list"></div>
+                <div class="pagination" id="show_pagination"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-layer"></div>
+    <div class="modal" id="demand_detail">
+        <div class="modal-head">
+            <a class="close"></a>
+            <div>按需定制商品详情</div>
+        </div>
+        <div class="modal-body">
+            <div class="divide-bar"></div>
+            <table class="product-detail">
+                <tr>
+                    <td class="product-item">产品名称：</td>
+                    <td id="demand_name"></td>
+                </tr>
+                <tr>
+                    <td class="product-item">数量：</td>
+                    <td id="demand_num"></td>
+                </tr>
+                <tr>
+                    <td class="product-item">产品尺寸：</td>
+                    <td id="demand_size"></td>
+                </tr>
+                <tr>
+                    <td class="product-item">材质：</td>
+                    <td id="demand_caizhi"></td>
+                </tr>
+                <tr>
+                    <td class="product-item">其他要求：</td>
+                    <td id="demand_others"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="modal-foot"></div>
+    </div>
+} {
+    <script type="text/javascript" src="/assets/js/common.js"></script>
+    <script type="text/javascript" src="/assets/js/home.js"></script>
+}

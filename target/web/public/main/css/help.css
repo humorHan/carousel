@@ -1,0 +1,135 @@
+/* CSS Document */
+
+.helper_box {
+    background: #f8f8f8;
+}
+
+.helper_layout {
+    padding-top: 30px;
+}
+
+.helper_right_container {
+    margin-left: 20px;
+    margin-bottom: 50px;
+    width: 950px;
+    float: left;
+    background: #ffffff;
+    min-height: 620px;
+}
+
+.helper_right_container .content_container div {
+    color: #666666;
+}
+
+.helper_right_container .content_container a {
+    color: #f54404;
+}
+
+.helper_right_container .content_container a:hover {
+    text-decoration: underline;
+}
+
+.helper_right_container .content_container .headline {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: normal;
+    color: #404144;
+}
+
+.helper_title {
+    height: 50px;
+    line-height: 50px;
+    background: #f1f1f1
+}
+
+.helper_title span {
+    display: block;
+    padding: 1px 0 1px 20px;
+    color: #f54404;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.content_container {
+    padding: 20px;
+}
+
+.content_container .download span {
+    display: inline-block;
+    width: 19%;
+    text-align: left;
+    overflow: hidden;
+    line-height: 30px;
+}
+
+.content_container div.img {
+    padding: 10px 36px;
+    text-align: center;
+}
+
+.content_container img {
+    max-width: 100%;
+}
+
+
+/*faq*/
+
+.faq_item {
+    margin: 0 0 20px;
+}
+
+.faq_tit {
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #f5f5f5;
+    background: #ffffff url(/assets/img/help/arrow_up.png) 97% 50% no-repeat;
+}
+
+.faq_item .faq_tit span {
+    cursor: pointer;
+    display: block;
+    padding: 1px 0 1px 20px;
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.faq_contain {
+    padding: 15px 20px 30px 20px;
+    margin-left: 0px;
+    display: none;
+    border-left: 1px solid #f5f5f5;
+    border-bottom: 1px solid #f5f5f5;
+    border-right: 1px solid #f5f5f5;
+}
+
+.faq_contain .faq_msg {
+    padding-left: 25px;
+    color: #666666;
+}
+
+.faq_contain ul,
+.faq_contain li {
+    list-style: none;
+}
+
+.open .faq_contain {
+    display: block;
+}
+
+.open .faq_tit {
+    background: #ffffff url(/assets/img/help/arrow_down.png) 97% 50% no-repeat;
+}
+
+.faq_contain div {
+    line-height: 25px;
+}
+
+.faq_contain .str {
+    font-weight: bold;
+}
+
+.clear {
+    clear: both;
+}

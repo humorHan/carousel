@@ -1,0 +1,56 @@
+@()(implicit pageParam: views.params.PageParam)
+@import views.html.templates._
+
+@main("退换货说明") {
+	<link rel="stylesheet" type="text/css" href="/assets/css/sidebar.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/help.css">
+} {
+	<div class="box helper_box">
+        <div class="container">
+			<div class="helper_layout">
+				<dl id="sidebar" class="sidebar">
+				    <dt><a href="javascript:;">常见问题</a></dt>
+				    <dd><a href="/faq/account">账号类</a></dd>
+				    <dd><a href="/faq/order">订单类</a></dd>
+				    <dd><a href="/faq/payment">支付类</a></dd>
+				    <dd><a href="/faq/distribution">配送类</a></dd>
+				    <dd><a href="/faq/printing">印刷类</a></dd>
+				    <dd><a href="/faq/other">其他类</a></dd>
+				    <dt><a href="javascript:;">印刷知识</a></dt>
+				    <dd><a href="/help/upload">上传文件须知</a></dd>
+				    <dd><a href="/help/chromatism">关于色差</a></dd>
+				    <dd><a href="/help/download">空白模板下载</a></dd>
+				    <dt><a href="javascript:;">订购指南</a></dt>
+				    <dd><a href="/help/process">订购流程</a></dd>
+				    <dd><a href="/help/logistics">物流查询</a></dd>
+				    <dt><a href="javascript:;">售后服务</a></dt>
+				    <dd><a href="/help/returns" class="sel">退换货说明</a></dd>
+		    		<dt></dt>
+				</dl>
+				<div class="helper_right_container">
+					<div class="helper_title"><span>退换货说明</span></div>
+					<div class="content_container">
+						<h3>印刷产品订单</h3>
+						<div>
+							<p>▪ 由于您的自身原因造成的产品质量问题，不支持退换货。如，印刷文件错误，产品选择错误。</p>
+							<p>▪ 由于酱印网造成的产品质量问题，则由我方免费重印发货，相关费用由酱印网承担。</p>
+							<p>▪ 退换货有效期为签收后7天内。</p>
+						</div>
+						<h3>印刷产品质量检查标准</h3>
+						<b>● 以名片产品为例，您可参照以下质量标准：</b>
+						<div>
+							<p>1）印刷内容无误：根据您提交名片印刷稿中所承载的所有名片内容；</p>
+							<p>2）印刷材质无误：根据您提交名片订单时所选取的印刷纸质；</p>
+							<p>3）印刷墨色均匀：名片成品整体色调调和，没有大面积的颜色不均；</p>
+							<p>4）名片色值与名片设计稿相符：名片印刷色差部分在行业公认标准内，即C.M.Y.K各值误差±10%以内的视为与原设计稿色值相符，为正常印刷品；</p>
+							<p>5）名片尺寸划一：成品尺寸标准为名片设计稿裁切出血后尺寸，长、宽尺寸允许公差±1.5mm。</p>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+} {
+<!-- js 们 -->
+}

@@ -1,0 +1,28 @@
+@()(implicit pageParam: views.params.PageParam)
+
+@main("支付成功") {
+    <!-- css 们 -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/pay.css">
+} {
+    <!-- 网页主体 -->
+    <div class="confirm-box box">
+        <div class="container">
+            <div class="pay-success-msg">
+                <div class="pay-content">
+                    <div class="remind">订单支付成功，我们将尽快为您发货！</div>
+                    <div class="order-num">订单号：<span id="pay_success_id"></div>
+                    <!-- <div class="order-sum">支付金额：<span id="pay_success_money"></span>元</div> -->
+                </div>
+            </div>
+            <div class="pay-success-foot">
+                <a class="jump-tip"><span id="count">5</span>秒后页面将自动跳转到订单详情页</a>
+                <a class="link" id="see_order">查看订单详情</a>
+                <span class="line"></span>
+                <a class="link" href="/index.html">继续逛逛</a>
+            </div>
+        </div>
+    </div>
+} {
+    <!-- js 们 -->
+    <script src="/assets/js/pay.js"></script>
+}

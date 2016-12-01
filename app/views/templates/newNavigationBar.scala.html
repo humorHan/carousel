@@ -1,0 +1,186 @@
+@()(implicit param: views.params.PageParam)
+@import views.params._
+
+<div class="product-wrap auto w1200">
+    @if(param.isHome) {
+        <div class="total-product show block">
+    } else {
+        <div class="total-product block">
+    }
+            <div class="font16 pointer pl20 bold line40">全部商品分类</div>
+            <ul class="nav-list">
+                @for(category <- param.categories) {
+                    <li>
+                        <div class="first-menu-wrap">
+                            <i class="first-menu-i floatRight"></i>
+                            <!-- 一级菜单名字-->
+                            <span class="first-menu font14 white">@category.name</span>
+                            <div class="summary font12">
+                                <!-- 循环输出商品摘要以及摘要名称-->
+                                <span class="summary-item">@Html(category.description)</span>
+                            </div>
+
+                            <div class="second-menu font14">
+                                <!-- 循环输出<多列>二级菜单-->
+                                @for(products <- category.productGroups) {
+                                    <ul>
+                                        @for(product <- products) {
+                                            <li>
+                                                <div class="second-menu-item">
+                                                    <a href="/product?id=@product.id">
+                                                        <img class="middle" src="@product.coverUrl?imageView2/1/w/40/h/40/" alt="" height="36" width="36"/>
+                                                        <span class="ml10">@product.brief</span>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                        }
+                                    </ul>
+                                }
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+        <ul class="nav-tab-wrap font16 block bold">
+            <li class="special-goods-wrap">
+                <span>特价商品</span>
+                <ul class="special-goods font14">
+                    <li>
+                        <a class="special-good-item" href="/product?id=57">
+                            <img src="/assets/img/special/special3.png"/>
+                            <div class="special-good-name center">特价易拉宝</div>
+                        </a>
+                    </li>
+                    <li class="special-line"></li>
+                    <li>
+                        <a class="special-good-item" href="/product?id=58">
+                            <img src="/assets/img/special/special2.png"/>
+                            <div class="special-good-name center">特价门型展架</div>
+                        </a>
+                    </li>
+                    <li class="special-line"></li>
+                    <li>
+                        <a class="special-good-item" href="/product?id=59">
+                            <img src="/assets/img/special/special1.png"/>
+                            <div class="special-good-name center">特价单页</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/product/custom">按需定制</a>
+            </li>
+            <!--<li>设计频道</li>
+            <li>案例展示</li>
+            <li>印刷常识</li>-->
+            <li>
+                <a href="http://pr.soyyin.com/">酱油传媒</a>
+            </li>
+        </ul>
+</div>
+
+<div class="fix-top-wrap">
+    <div class="product-wrap auto w1200 clearFix">
+        <a class="middle block" href="/new">
+            <img src="/assets/img/fixed-logo.png" height="24px" width="54px">
+        </a>
+        <div class="fix-total-product block">
+            <div class="ml40 font16 pointer bold hover-red line50">全部商品分类</div>
+            <ul class="nav-list">
+                @for(category <- param.categories) {
+                <li>
+                    <div class="first-menu-wrap">
+                        <i class="first-menu-i floatRight"></i>
+                        <!-- 一级菜单名字-->
+                        <span class="first-menu font14 white">@category.name</span>
+                        <div class="summary font12">
+                            <!-- 循环输出商品摘要以及摘要名称-->
+                            <span class="summary-item">@Html(category.description)</span>
+                        </div>
+
+                        <div class="second-menu font14">
+                            <!-- 循环输出<多列>二级菜单-->
+                            @for(products <- category.productGroups) {
+                            <ul>
+                                @for(product <- products) {
+                                <li>
+                                    <div class="second-menu-item">
+                                        <a href="/product?id=@product.id">
+                                            <img class="middle" src="@product.coverUrl?imageView2/1/w/40/h/40/" alt="" height="36" width="36"/>
+                                            <span class="ml10">@product.brief</span>
+                                        </a>
+                                    </div>
+                                </li>
+                                }
+                            </ul>
+                            }
+                        </div>
+                    </div>
+                </li>
+                }
+            </ul>
+        </div>
+        <ul class="nav-tab-wrap font16 block bold line50" style="line-height: 50px; height: 50px;">
+            <li class="special-goods-wrap">
+                <span>特价商品</span>
+                <ul class="special-goods font14">
+                    <li>
+                        <a class="special-good-item" href="/product?id=57">
+                            <img src="/assets/img/special/special3.png"/>
+                            <div class="special-good-name center">特价易拉宝</div>
+                        </a>
+                    </li>
+                    <li class="special-line"></li>
+                    <li>
+                        <a class="special-good-item" href="/product?id=58">
+                            <img src="/assets/img/special/special2.png"/>
+                            <div class="special-good-name center">特价门型展架</div>
+                        </a>
+                    </li>
+                    <li class="special-line"></li>
+                    <li>
+                        <a class="special-good-item" href="/product?id=59">
+                            <img src="/assets/img/special/special1.png"/>
+                            <div class="special-good-name center">特价单页</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/product/custom">按需定制</a>
+            </li>
+            <!--<li>设计频道</li>
+            <li>案例展示</li>
+            <li>印刷常识</li>-->
+            <li>
+                <a href="http://pr.soyyin.com/">酱油传媒</a>
+            </li>
+        </ul>
+        <div class="floatRight">
+            <ul class="site-nav-handle floatRight font12">
+                <li class="login mr10 pointer status1">登录</li>
+                <li class="mr10 pointer ver status1">|</li>
+                <li class="mr20 pointer status1">
+                    <a href="/static/register.html">注册</a>
+                </li>
+                <li class="login-status pointer relative none">
+                    <i class="fix-user-bg block middle"></i>
+                    <span class="block">欢迎您，酱油君</span>
+                    <i class="login-status-bg block"></i>
+                    <ul class="login-out none line30">
+                        <li><a href="/home">我的订单</a></li>
+                        <li class="login-out-btn">退出</li>
+                    </ul>
+                </li>
+                <li class="fix-cart-num-wrap">
+                    <span class="fix-cart block">
+                        <span class="fix-cart-bg block middle"></span>
+                        <span class="fix-cart-num block"></span>
+                    </span>
+                    <div class="cart-products-wrap none"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

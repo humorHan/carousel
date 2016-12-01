@@ -1,0 +1,455 @@
+.act-998 {
+	position: relative;
+}
+
+.act-998 .container {
+	width: 1200px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -600px;
+}
+
+.act-998 .bg {
+    width: 100%;
+    height: 178px;
+}
+
+.act-998 .required-product {
+	margin-top: 1100px;
+	position: relative;
+	height: 750px;
+}
+
+.act-998 .required-product-title {
+	display: block;
+	margin: 10px auto;
+	padding-right: 30px;
+}
+
+.act-998 .required-product-1 {
+	height: 543px;
+	width: 426px;
+	position: absolute;
+	top: 150px;
+	right: 50%;
+	margin-right: 70px;
+	background: url(http://source.soyyin.com/activities/998/required_product_1_bg.png) no-repeat center center;
+}
+
+.act-998 .required-product-2 {
+	height: 543px;
+	width: 426px;
+	position: absolute;
+	top: 150px;
+	left: 50%;
+	margin-left: 70px;
+	background: url(http://source.soyyin.com/activities/998/required_product_2_bg.png) no-repeat center center;
+}
+
+.act-998 .required-product .product-img {
+	display: block;
+	height: 320px;
+	width: 400px;
+	margin: 80px auto 0;
+}
+
+.act-998 .plus-icon {
+	display: block;
+	margin: 310px auto 0;
+}
+
+.act-998 .optional-product {
+	margin-top: 60px;
+	position: relative;
+}
+
+.act-998 .optional-product-title {
+	display: block;
+	margin: 10px auto 0;
+	padding-right: 30px;
+	padding-bottom: 30px;
+}
+
+.act-998 .optional-product-row {
+	height: 444px;
+	width: 990px;
+	margin: 30px auto 0;
+}
+
+.act-998 .optional-product-row-item {
+	float: left;
+	margin-left: 15px;
+	height: 444px;
+	width: 320px;
+	background-color: white;
+}
+
+.act-998 .optional-product-row-item:first-child {
+	margin-left: 0;
+}
+
+.act-998 .optional-product .product-img {
+	display: block;
+	height: 300px;
+	width: 300px;
+	margin: 0 auto;
+}
+
+.act-998 .optional-product .product-desc {
+	height: 80px;
+	width: 270px;
+	padding: 4px 25px 0;
+}
+
+.act-998 .optional-product .product-title {
+	font-size: 24px;
+	color: #252535;
+	font-weight: bold;
+	line-height: 38px;
+}
+
+.act-998 .optional-product .product-introduction {
+	font-size: 14px;
+	color: #666666;
+	line-height: 20px;
+}
+
+.act-998 .optional-product .product-bottom-area {
+	height: 60px;
+	width: 320px;
+	background-color: #F0EFF4;
+	position: relative;
+}
+
+.act-998 .optional-product .jiazhi-text {
+	position: absolute;
+	font-size: 18px;
+	line-height: 18px;
+	color: #F54404;
+	left: 25px;
+	top:22px;
+	font-weight: bold;
+}
+
+.act-998 .optional-product .product-price {
+	position: absolute;
+	font-size: 32px;
+	line-height: 32px;
+	color: #F54404;
+	left: 70px;
+	top:12px;
+	font-weight: bold;
+}
+
+.act-998 .optional-product .btn {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 60px;
+	width: 120px;
+	cursor: pointer;
+}
+
+.act-998 .optional-product .unchecked {
+	background: url(http://source.soyyin.com/activities/998/product_unchecked.png);
+}
+
+.act-998 .optional-product .checked {
+	background: url(http://source.soyyin.com/activities/998/product_checked.png);
+}
+
+.act-998 .act-combo {
+	margin-top: 110px;
+}
+
+.act-998 .act-combo-title {
+	display: block;
+    margin: 10px auto;
+    padding-right: 30px;
+}
+
+.act-998 .act-combo-table-area {
+	margin: 45px auto 0;
+	height: 653px;
+	width: 996px;
+	padding-top: 20px;
+	background: url(http://source.soyyin.com/activities/998/act_combo_table_bg.png);
+	position: relative;
+}
+
+.act-998 .act-combo-table {
+	margin: 0 auto;
+	width: 900px;
+	border-collapse: collapse;
+}
+
+.act-998 .act-combo-table thead td {
+	text-align: center;
+    vertical-align: middle;
+    height: 60px;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.act-998 .act-combo-table tbody td {
+	text-align: center;
+    vertical-align: middle;
+	border-top: 2px dashed #CCC;
+	height: 58px;
+    font-size: 14px;
+    color: #333;
+}
+
+.act-998 .act-combo-table tbody .act-combo-table-cell-price {
+	font-size: 16px;
+	color: #F54404;
+	font-weight: bold;
+}
+
+.act-998 .act-combo-table tbody .act-combo-table-cell-status-checked {
+	font-size: 16px;
+	color: #F54404;
+	font-weight: bold;
+}
+
+.act-998 .act-combo-table tbody .act-combo-table-cell-status-unchecked {
+	font-size: 16px;
+	color: #999;
+	font-weight: bold;
+}
+
+.act-998 .act-combo .divider {
+	height: 2px;
+	width: 900px;
+	margin: 2px auto 0;
+	background-color: #F54404;
+}
+
+.act-998 .act-combo .triangle {
+	width: 0px;
+    height: 0px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 8px solid #F54404;
+    margin: 0 auto;
+}
+
+.act-998 .act-combo .original-cost {
+	position: absolute;
+	right: 560px;
+	bottom: 42px;
+	text-decoration:line-through;
+	font-size: 20px;
+	color: #999;
+	font-weight: bold;
+}
+
+.act-998 .act-combo .price-divider {
+	position: absolute;
+	right: 540px;
+	bottom: 40px;
+	border-left: 1px dashed #CCC;
+	height: 25px;
+	width: 0px;
+}
+
+.act-998 .act-combo .combo-price-text {
+	position: absolute;
+	right: 400px;
+	bottom: 42px;
+	font-size: 20px;
+	color: #F54404;
+	font-weight: bold;
+}
+
+.act-998 .act-combo .combo-price {
+	position: absolute;
+	right: 300px;
+	bottom: 35px;
+	font-size: 36px;
+	color: #F54404;
+	font-weight: bold;
+}
+
+.act-998 .act-combo .add-cart-btn {
+	position: absolute;
+	right: 50px;
+	bottom: 25px;
+	height: 66px;
+	width: 200px;
+	line-height: 66px;
+	font-size: 22px;
+	text-align: center;
+	color: #FFF;
+	cursor: pointer;
+}
+
+.act-998 .act-combo .enabled {
+	background-color: #F54404;
+}
+
+.act-998 .act-combo .enabled:hover {
+	background-color: #F98F68;
+}
+
+.act-998 .act-combo .disabled {
+	background-color: #CCC;
+	cursor: not-allowed;
+}
+
+.act-998 .act-introduction {
+	margin: 60px auto 0;
+	width: 996px;
+	position: relative;
+}
+
+.act-998 .act-introduction-title {
+	font-size: 24px;
+	color: #FFF;
+	margin-bottom: 20px;
+}
+
+.act-998 .act-introduction-content {
+	font-size: 20px;
+	color: #FFF;
+	line-height: 30px;
+}
+
+.act-998 .act-consult {
+	position: absolute;
+	font-size: 20px;
+	color: #FDF100;
+	right: 0;
+	top: 170px;
+}
+
+.act-998 .act-consult:hover {
+	text-decoration: underline;
+}
+
+.act-998 .bg-1 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_01.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-2 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_02.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-3 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_03.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-4 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_04.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-5 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_05.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-6 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_06.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-7 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_07.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-8 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_08.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-9 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_09.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-10 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_10.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-11 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_11.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-12 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_12.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-13 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_13.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-14 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_14.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-15 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_15.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-16 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_16.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-17 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_17.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-18 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_18.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-19 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_19.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-20 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_20.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-21 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_21.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-22 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_22.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-23 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_23.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-24 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_24.png) no-repeat center center;
+    background-size: auto 178px;
+}
+
+.act-998 .bg-25 {
+    background: url(http://source.soyyin.com/activities/998/998_bg_25.png) no-repeat center center;
+    background-size: auto 178px;
+}

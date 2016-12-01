@@ -1,0 +1,123 @@
+#link-editor-tip {
+  position: absolute;
+  padding: 5px;
+  max-height: 20px; // #info-layer height(border-box)
+  border: 1px solid $border-color;
+  background: #fff;
+  font-size: 14px;
+  overflow: hidden;
+  box-shadow: $popup-shadow;
+  transition: all .5s, z-index 0s;
+
+  &.hide {
+    z-index: -1;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    pointer-events: none;
+
+    button {
+      cursor: default;
+    }
+  }
+  &.show {
+    z-index: 999;
+    opacity: 1;
+    filter: none;
+  }
+
+  &.editor-open {
+    max-height: 120px;
+
+    #info-layer {
+      border-bottom: 1px dashed $border-color;
+    }
+
+    #open-editor {
+      width: 0;
+      transition-delay: 0;
+    }
+  }
+}
+
+#link-info {
+  color: #259;
+  text-decoration: none;
+
+  &:hover {
+    background: #eff6fa;
+  }
+}
+
+#info-layer {
+  height: 25px;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+}
+
+#open-editor {
+  white-space: nowrap;
+  transition: width .3s .5s;
+}
+#remove-link {
+  color: #f00;
+}
+
+#link-editor-tip button {
+  width: 35px;
+  padding: 0;
+  margin-left: 5px;
+  border: 0;
+  outline: 0;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+
+  // override
+  height: auto;
+  box-shadow: none;
+  text-shadow: none;
+  line-height: 20px;
+  vertical-align: inherit;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+#link-editor {
+  padding-top: 5px;
+  text-align: center;
+
+  input {
+    padding: 2px 5px;
+    color: #555;
+    outline: none;
+    border: 1px solid $border-color;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+
+    &:focus {
+      border-color: #66afe9;
+    }
+  }
+
+  button {
+    padding: 2px 15px;
+    margin: 0 10px;
+    width: auto;
+    color: #fff;
+    background: #5bc0de;
+    border: 1px solid #46b8da;
+    letter-spacing: .2em;
+
+    &:hover {
+      background-color: #31b0d5;
+      border-color: #269abc;
+      text-decoration: none;
+    }
+  }
+
+  .link-editor-layer {
+    padding-bottom: 5px;
+  }
+}

@@ -1,0 +1,58 @@
+.edui-wordpastepop {
+  .edui-popup-content {
+    width: 68px;
+    height: 28px;
+  }
+
+  .edui-pasteicon {
+    width: 20px;
+    height: 20px;
+    white-space: nowrap;
+    &:before {
+      content: '(CTRL)';
+      padding-left: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 22px;
+      color: darken($fore-color, 10%);
+    }
+  }
+}
+
+.edui-pastecontainer {
+  position: relative;
+  top: 3px;
+  left: -4px;
+  width: 100px;
+  visibility: hidden;
+  background: #fff;
+  border: 1px solid $border-color;
+  box-shadow: $popup-shadow;
+
+  .edui-title {
+    height: 25px;
+    padding-left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 25px;
+    background: #f8f8ff;
+  }
+
+  .edui-button {
+    overflow: hidden;
+    padding: 3px 0 3px 5px;
+  }
+}
+
+.edui-richtxticon,
+.edui-tagicon,
+.edui-plaintxticon {
+  float: left;
+
+  .edui-state-hover & {
+    @extend %button-checked;
+  }
+  .edui-state-active & {
+    @extend %button-active;
+  }
+}

@@ -1,0 +1,39 @@
+@()(implicit pageParam: views.params.PageParam)
+@import views.html.templates._
+
+@main("编辑商品详情") {
+<!-- css 们 -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/admin/edit-product.css">
+    <link rel="stylesheet" type="text/css" href="/assets/wang-editor/css/wangEditor.css">
+} {
+    <div class="box">
+        <div class="container">
+            <div id="edit_product"></div>
+            <div class="form">
+                <div class="form-title">
+                    <span class="form-title-span">商品详情</span>
+                </div>
+                <div class="form-body">
+                    <div id="editor-trigger" style="height:600px;">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="confirm-submit">
+                <span><a href="javascript:;" id="update_product_detail">确定修改</a></span>
+            </div>
+        </div>
+    </div>
+    <script type="text/x-jquery-tmpl" id="product_template">
+        <p class="breadcrumb">当前位置：<a href="/">首页</a> > <a>编辑商品详情</a> > <a class="current" href="/product?id=${id}">商品ID：${id}</a></p>
+        <h2>商品名称：<a href="/product?id=${id}" target="_blank" class="product-name">${title}</a></h2>
+    </script>
+} {
+    <script type="text/javascript" src="/assets/js/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src='/assets/js/main.js'></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/Plupload/2.1.1/plupload.full.min.js"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/qiniu-js-sdk/1.0.14-beta/qiniu.min.js"></script>
+    <script type="text/javascript" src="/assets/wang-editor/js/wangEditor.js"></script>
+    <script type="text/javascript" src="/assets/wang-editor/js/plugin/anchor-menu.js"></script>
+    <script type="text/javascript" src='/assets/js/admin/edit-product-wang-editor.js'></script>
+}

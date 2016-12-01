@@ -1,0 +1,53 @@
+@()(implicit pageParam: views.params.PageParam)
+
+@main("订单支付") {
+    <!-- css 们 -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/pay.css">
+} {
+    <!-- 网页主体 -->
+    <div class="confirm-box box">
+        <div class="container">
+            <div class="pay-order-msg">
+                <div class="pay-right">
+                    <div>应付金额：<span id="pay_money"></span>元</div>
+                    <a id="pay_order_detail">查看订单详情></a>
+                </div>
+                <div class="remind">订单提交成功，请尽快支付您的订单!</div>
+                <div class="center">
+                    <div>订单号：<span id="pay_order_id"></span></div>
+                    <div class="time">下单时间： <span id="pay_order_time"></span></div>
+                </div>
+            </div>
+            <div class="form">
+                <div class="form-title">
+                    <span>支付方式</span>
+                </div>
+                <div class="form-body" id="change_pay_method">
+                    <a class="pay-method selected" id="WECHAT_QR">微信支付</a>
+                    <a class="pay-method" id="ALIPAY_QR">支付宝扫码支付</a>
+                    <a class="pay-method" id="ALIPAY_PC">支付宝网页支付</a>
+                </div>
+            </div>
+            <a id="online_pay" class="pay-btn">确认支付</a>
+        </div>
+    </div>
+    
+    <div class="modal-layer"></div>
+    <div class="modal" style="margin-left:-200px;">
+        <div class="modal-head">
+            <a class="close"></a>
+            <div>应付金额：<span id="qr_pay_money"></span>元</div>
+        </div>
+        <div class="modal-body" style="text-align: center;">
+            <div class="divide-bar"></div>
+            <div id="qrcode_pay"></div>
+            <div class="tool-tip">使用<span id="qr_pay_method">微信</span>扫一扫，扫描二维码支付</div>
+        </div>
+    </div>
+} {
+    <!-- js 们 -->
+    <script src="http://7bvan6.com2.z0.glb.qiniucdn.com/jquery.qrcode.min.js"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/pingpp-pc.js"></script>
+    <script src="/assets/js/pay.js"></script>
+}

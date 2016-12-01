@@ -1,0 +1,81 @@
+@()(implicit pageParam: views.params.PageParam)
+@import views.html.templates._
+
+@main("常见问题-配送类") {
+	<link rel="stylesheet" type="text/css" href="/assets/css/sidebar.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/help.css">
+} {
+	<div class="box helper_box">
+        <div class="container">
+			<div class="helper_layout">
+				<dl id="sidebar" class="sidebar">
+				    <dt><a href="javascript:;">常见问题</a></dt>
+				    <dd><a href="/faq/account">账号类</a></dd>
+				    <dd><a href="/faq/order">订单类</a></dd>
+				    <dd><a href="/faq/payment">支付类</a></dd>
+				    <dd><a href="/faq/distribution" class="sel">配送类</a></dd>
+				    <dd><a href="/faq/printing">印刷类</a></dd>
+				    <dd><a href="/faq/other">其他类</a></dd>
+				    <dt><a href="javascript:;">印刷知识</a></dt>
+				    <dd><a href="/help/upload">上传文件须知</a></dd>
+				    <dd><a href="/help/chromatism">关于色差</a></dd>
+				    <dd><a href="/help/download">空白模板下载</a></dd>
+				    <dt><a href="javascript:;">订购指南</a></dt>
+				    <dd><a href="/help/process">订购流程</a></dd>
+				    <dd><a href="/help/logistics">物流查询</a></dd>
+				    <dt><a href="javascript:;">售后服务</a></dt>
+				    <dd><a href="/help/returns">退换货说明</a></dd>
+		    		<dt></dt>
+				</dl>
+				<div class="helper_right_container">
+					<div class="helper_title"><span>配送类</span></div>
+					<div class="content_container">			
+						<dl class="faq_item open">
+							<dt class="faq_tit"><span>1.配送方式及费用</span></dt>
+							<dd class="faq_contain">
+								<div>我们目前提供的配送方式有普通快递、专车配送。</div>
+								<div>（1）<b>普通快递</b>：出货当天即寄出，预计2-5天送达。物流费用按照物流公司实际收取费用核算。</div>
+								<div>（2）<b>专车配送</b>：专人专车送货上门（仅限北京部分地区），需提前与酱印网客服沟通，商议配送运费及配送时间。</div>
+							</dd>
+						</dl>
+						<dl class="faq_item">
+							<dt class="faq_tit"><span>2.货期说明</span></dt>
+							<dd class="faq_contain">
+								<div>
+									<p>① 货期即出货周期，是指订单从投入生产到生产完成的时间（不包含配送时间）。</p>
+									<p>② 货期=生产天数+加工天数，不包含周日和法定节假日。</p>
+									<p>③ 酱印网客服接单并确认印刷文件无误后，货物即开始投入生产。</p>
+								</div>
+							</dd>
+						</dl>
+						<dl class="faq_item">
+							<dt class="faq_tit"><span>3.为何货物没准时送达？</span></dt>
+							<dd class="faq_contain">
+								<div>出货时间是遵守规范且准确的。如果货物送达延期了，通常是遇到了突发的产品质量或运输问题，我们将告知您，并尽快处理。</div>
+							</dd>
+						</dl>
+						<dl class="faq_item">
+							<dt class="faq_tit"><span>4.喷绘海报可以帮我们贴吗？</span></dt>
+							<dd class="faq_contain">
+								<div>抱歉，暂时无法为您提供安装服务，请谅解！</div>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+} {
+	<script type="text/javascript">
+		!function()
+		{
+			$(".helper_right_container").delegate("dt.faq_tit, .open .faq_close a","click",function(e)
+				{
+					var a=$(this).closest(".faq_item");
+					a.hasClass("open")?a.removeClass("open").siblings("dl.faq_item").removeClass("open"):a.addClass("open").siblings("dl.faq_item").removeClass("open")
+				}
+			);
+		}();
+	</script>
+}

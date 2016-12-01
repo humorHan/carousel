@@ -1,0 +1,12 @@
+#upload-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: $icon-width;
+  height: $icon-height;
+  opacity: 0;
+  overflow: hidden;
+  filter: alpha(opacity=0);
+}

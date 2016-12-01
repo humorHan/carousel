@@ -1,0 +1,286 @@
+@()(implicit pageParam: views.params.PageParam)
+
+@main("订单详情") {
+	<link rel="stylesheet" type="text/css" href="/assets/css/order.css">
+} {
+	<div class="box">
+        <div class="container" id="order_container">
+        </div>
+    </div>
+    <script id="template" type="text/x-jquery-tmpl">
+        <p class="breadcrumb">当前位置：<a href="/">首页</a> > <a href="/home">我的订单</a> > <a class="current">订单：${id}</a></p>
+        <div class="order-status-area" id="status_change" data-id="${id}">
+            <span class="order-number">订单号：${id}</span>
+            <span class="order-status">订单状态：<span style="color: #66cc66">${status_t}</span></span>
+            {{if (payment === 'ONLINE' && status === 'SUBMITTED') || (payment === 'CASH_ON_DELIVERY' && status === 'DELIVERY_CONFIRMED')}}
+                <span class="order-op">
+                {{if is_priced}}
+                    <a href="pay?order_id=${id}">立即支付</a>
+                {{else}}
+                    <a class="unable"><span class="prompt">等待客服MM与您确定订单需求及金额后才可以支付哦~</span>立即支付></a>
+                {{/if}}
+                </span>
+            {{/if}}
+            <span class="cancel-order">
+                {{if status === 'SUBMITTED' || status === 'ONLINE_PAID'}}
+                    <a id="cancel_order" href="javascript:;">取消订单</a>
+                {{else status === 'DELIVERY_CONFIRMED' || status === 'ONLINE_CONFIRMED'}}
+                    <a class="unable"><span class="prompt">商家已接单，请联系酱印网客服提交取消订单的申请，如印品已开始制作，将无法取消订单。</span>取消订单</a>
+                {{/if}}
+            </span>
+        </div>
+        <div class="order-prompt">
+        {{if status === 'SUBMITTED'}}
+            {{if is_priced}}
+                {{if payment === 'ONLINE'}}
+                尊敬的客户，我们还未收到该订单的款项，请您尽快付款。支付完成后，酱印网客服才能接单。
+                {{else}}
+                尊敬的客户，该订单已经成功提交，请等待客服MM接单。
+                {{/if}}
+            {{else}}
+                尊敬的客户，该订单包含未知价格的按需定制商品，我们的客服MM稍后将联系您，以确定订单金额，请耐心等待。
+            {{/if}}
+        {{else status === 'DELIVERY_CONFIRMED' || status === 'ONLINE_CONFIRMED'}}
+            客服MM已经接单，您的商品即将开始制作，请耐心等待。
+        {{else status === 'ONLINE_PAID'}}
+            尊敬的客户，您已成功支付了订单，请等待客服MM已经接单。
+        {{else status === 'DELIVERY_PAID'}}
+            尊敬的客户，您已成功支付了订单，请等待货物送达。
+        {{else status === 'FINISHED'}}
+            订单已经完成，感谢您在酱印网购物，欢迎您继续选购其他商品。
+        {{else status === 'CANCELED'}}
+            订单已经取消，感谢您在酱印网购物，欢迎您继续选购其他商品。
+        {{/if}}
+        </div>
+        <div class="order-process">
+            <span class="process-container">
+            {{html process}}
+            </span>
+        </div>
+        <div class="form">
+            <div class="form-title">
+                <span class="form-title-span">商品清单</span>
+            </div>
+            <div class="form-body">
+                <table class="products-table">
+                    <thead class="products-table-th">
+                    <tr>
+                        <th style="text-align:left;padding-left:110px;">商品信息</th>
+                        <th>单价（元）</th>
+                        <th>数量</th>
+                        <th>印刷文件</th>
+                    </tr>
+                    </thead>
+                    <tbody id="product_item" class="products-table-tb">
+                    {{each(i,item) items}}
+                        <tr data-id="${item.id}">
+                            <td class="item-product">
+                                <div>
+                                    <div class="item-product-img">
+                                        <a href="/product?id=${item.product_id}#${item.brief}"><img src="${img_link+item.image_key}?imageView2/1/w/80/h/80/"></a>
+                                    </div>
+                                    <div class="item-product-describe">
+                                        <a href="/product?id=${item.product_id}#${item.brief}">
+                                            <p class="title">${item.title}</p>
+                                            <p class="describe">${item.brief}</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="item-price">
+                                <div>${processData.processPrice(item.price)}</div>
+                            </td>
+                            <td class="item-num">x${item.quantity}</td>
+                            <td class="item-deal">
+                                {{if item.file}}
+                                <a class="deal-block upload-file" href="${img_link+item.file.file_key}" target="_blank" title="${item.file.file_name}" style="display:block">${item.file.file_name}</a>
+                                {{else}}
+                                <a class="deal-block upload-file" href="" target="_blank"></a>
+                                {{/if}}
+                                <a class="deal-block add-file">上传文件<input class="hide-file" type="file"></a>
+                                {{if item.file}}
+                                <a class="deal-block delete-file" style="display:block">删除</a>
+                                {{else}}
+                                <a class="deal-block delete-file">删除</a>
+                                {{/if}}
+                            </td>
+                        </tr>
+                    {{/each}}
+                    <!-- 按需定制 -->
+                    {{if custom_items.length !== 0}}
+                        <tr class="on-demand">
+                            <td colspan="4">
+                                <div class="on-demand-title">按需定制商品<span>（客服MM将与您进一步沟通并确定价格）</span></div>
+                            </td>
+                        </tr>
+                        {{each(i,custom) custom_items}}
+                        <tr data-id="${custom.id}" data-detail="${JSON.stringify(custom.detail)}">
+                            <td class="item-product">
+                                <div>
+                                    <div class="item-product-img">
+                                        <a class="demand-pop"><img src="${img_link+custom.image_key}?imageView2/1/w/80/h/80/"></a>
+                                    </div>
+                                    <div class="item-product-describe">
+                                        <a class="demand-pop">
+                                            <p class="title">${custom.title}</p>
+                                            <p class="describe">${custom.brief}</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="item-price">
+                                {{if custom.price === 0}}
+                                <div>待定</div>
+                                {{else}}
+                                <div>${processData.processPrice(custom.price)}</div>
+                                {{/if}}
+                            </td>
+                            <td class="item-num">x1</td>
+                            <td class="item-deal">
+                                {{if custom.file}}
+                                <a class="deal-block upload-file" href="${img_link+custom.file.file_key}" target="_blank" title="${custom.file.file_name}" style="display:block">${custom.file.file_name}</a>
+                                {{else}}
+                                <a class="deal-block upload-file" href="" target="_blank"></a>
+                                {{/if}}
+                                <a class="deal-block add-file">上传文件<input class="hide-file" type="file"></a>
+                                {{if custom.file}}
+                                <a class="deal-block delete-file" style="display:block">删除</a>
+                                {{else}}
+                                <a class="deal-block delete-file">删除</a>
+                                {{/if}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                    {{/if}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="form order-info">
+            <div class="form-title">
+                <span class="form-title-span">订单信息</span>
+            </div>
+            <div class="form-body" style="margin-top: 20px;">
+                <div class="order-info-right">
+                    <div>
+                        <span class="info-item-name">支付方式：</span>
+                        <span class="text-content">${payment_t}</span>
+                    </div>
+                    <div>
+                        <span class="info-item-name">配送方式：</span>
+                        <span class="text-content">普通快递</span>
+                    </div>
+                    <div>
+                        <span class="info-item-name">商品金额：</span>
+                        <span class="text-content">￥${amount_t}</span>
+                    </div>
+                    <div>
+                        <span class="info-item-name">配送费用：</span>
+                        <span class="text-content">￥${freight_t}</span>
+                    </div>
+                    <div>
+                        <span class="info-item-name">订单金额：</span>
+                        <span class="text-content" style="line-height: 40px; color: #f54404; font-size: 24px;">￥${total}</span>
+                    </div>
+                </div>
+                <div class="order-info-left">
+                    <div>
+                        <span class="info-item-name">收货人信息：</span>
+                        <span style="margin-left:5px">${consignee_name}</span>
+                        <span style="margin-left:10px">${consignee_phone}</span>
+                        <span style="margin-left:10px; max-width:500px; overflow:hidden;height: 30px;">${address}</span>
+                        <span style="margin-left:10px">${post_code}</span>
+                    </div>
+                    <div>
+                        <span class="info-item-name">需求联系人：</span>
+                        {{if contact_name}}
+                            <span style="margin-left:5px">${contact_name}</span>
+                        {{else}}
+                            <span style="margin-left:5px">${consignee_name}</span>
+                        {{/if}}
+                        {{if contact_phone}}
+                            <span style="margin-left:10px">${contact_phone}</span>
+                        {{else}}
+                            <span style="margin-left:5px">${consignee_phone}</span>
+                        {{/if}}
+                        {{if contact_qq}}
+                            <span style="margin-left:10px">QQ：${contact_qq}</span>
+                        {{/if}}
+                    </div>
+                    {{if invoice_title}}
+                        <div>
+                            <span class="info-item-name">发票抬头：</span>
+                            <span style="margin-left:17px; max-width:650px; overflow:hidden;height: 30px;">${invoice_title}</span>
+                        </div>
+                    {{/if}}
+                    {{if remark}}
+                        <div>
+                            <span class="info-item-name" style="vertical-align: top;">备注信息：</span>
+                            <span style="margin:3px 0 3px 17px; max-width:650px; line-height: 24px; vertical-align: top;word-break: break-all;">${remark}</span>
+                        </div>
+                    {{/if}}
+                    {{if delivery_time}}
+                        <div>
+                            <span class="info-item-name">配送时间：</span>
+                            <span style="margin-left:17px; max-width:650px; overflow:hidden;height: 30px; color:#f54404">${delivery_time}</span>
+                        </div>
+                    {{/if}}
+                    {{if support}}
+                        <div>
+                            <span class="info-item-name">专属客服：</span>
+                            <span style="margin-left:17px; max-width:450px; overflow:hidden;height: 30px; color:#f54404">${support}</span>
+                            <span style="font-size:12px; ">（有问题直接联系专属客服）</span>
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <div class="modal-layer"></div>
+    <div class="modal" id="cancel_order_modal">
+        <div class="modal-head"><a class="close"></a></div>
+        <div class="modal-body">
+            <div class="tip">
+                <div class="message sad">确定要取消订单吗？</div>
+            </div>
+        </div>
+        <div class="modal-foot"><a class="btn left no-stay">取消</a><a class="btn right">确定</a></div>
+    </div>
+    <div class="modal" id="demand_detail">
+        <div class="modal-head">
+            <a class="close"></a>
+            <div>按需定制商品详情</div>
+        </div>
+        <div class="modal-body">
+            <div class="divide-bar"></div>
+            <table class="product-detail">
+                <tr>
+                    <td class="product-item">产品名称：</td>
+                    <td id="demand_name"></td>
+                </tr>
+                <tr>
+                    <td class="product-item">数量：</td>
+                    <td id="demand_num"></td>
+                </tr>
+                <tr>
+                    <td class="product-item">产品尺寸：</td>
+                    <td id="demand_size"></td>
+                </tr>
+                <tr>
+                    <td class="product-item">材质：</td>
+                    <td id="demand_caizhi"></td>
+                </tr>
+                <tr>
+                    <td class="product-item">其他要求：</td>
+                    <td id="demand_others"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="modal-foot"></div>
+    </div>
+} {
+    <script type="text/javascript" src="/assets/js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="/assets/js/common.js"></script>
+    <script type="text/javascript" src="/assets/js/order.js"></script>
+}

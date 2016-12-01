@@ -1,0 +1,64 @@
+# Routes
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                               controllers.Assets.at(path="/public", file)
+
+# Map static page from the /static folder to the /static URL path
+GET     /static/*file                               controllers.Assets.at(path="/public", file)
+
+# Pages
+
+GET     /                                           @controllers.Application.index
+GET     /new                                        @controllers.Application.newIndex
+
+GET     /product                                    @controllers.Application.product(id: Int ?= -1)
+GET     /product/custom                             @controllers.Application.customProduct
+GET     /cart                                       @controllers.Application.cart
+GET     /cart/confirm                               @controllers.Application.cartConfirm
+GET     /home                                       @controllers.Application.home
+GET     /order                                      @controllers.Application.order
+
+GET     /pay                                        @controllers.Application.pay
+GET     /pay/success                                @controllers.Application.paySuccess
+
+GET     /equipmentLeasing                           @controllers.Application.equipmentLeasing
+GET     /design                                     @controllers.Application.design
+GET     /404                                        @controllers.Application.notFound
+
+GET     /activities/998                             @controllers.Application.activities
+
+# Helper Pages
+
+GET     /faq/account                                @controllers.HelpController.account
+GET     /faq/distribution                           @controllers.HelpController.distribution
+GET     /faq/order                                  @controllers.HelpController.order
+GET     /faq/other                                  @controllers.HelpController.other
+GET     /faq/payment                                @controllers.HelpController.payment
+GET     /faq/printing                               @controllers.HelpController.printing
+
+GET     /help/chromatism                            @controllers.HelpController.chromatism
+GET     /help/download                              @controllers.HelpController.download
+GET     /help/logistics                             @controllers.HelpController.logistics
+GET     /help/process                               @controllers.HelpController.process
+GET     /help/returns                               @controllers.HelpController.returns
+GET     /help/upload                                @controllers.HelpController.upload
+
+GET     /about/introduction                         @controllers.HelpController.introduction
+GET     /about/contactus                            @controllers.HelpController.contactus
+GET     /about/services                             @controllers.HelpController.services
+
+# Admin Pages
+
+GET     /admin/order/list                           @controllers.AdminController.orderList
+GET     /admin/order                                @controllers.AdminController.order
+GET     /admin/order/edit                           @controllers.AdminController.editOrder
+
+GET     /admin/product/edit                         @controllers.AdminController.editProduct
+GET     /admin/product/edit-v2                      @controllers.AdminController.editProductV2
+
+# Proxy Pass
+
+GET     /api/*path                                  @controllers.ProxyController.proxyPass(path)
+POST    /api/*path                                  @controllers.ProxyController.proxyPass(path)
+PUT     /api/*path                                  @controllers.ProxyController.proxyPass(path)
+DELETE  /api/*path                                  @controllers.ProxyController.proxyPass(path)

@@ -1,0 +1,35 @@
+.edui-colorpicker-topbar {
+  height: 27px;
+  width: 200px;
+}
+
+.edui-colorpicker-preview {
+  height: 20px;
+  outline: 1px solid $fore-color;
+  width: 128px;
+  float: left;
+}
+
+.edui-colorpicker-nocolor {
+  float: right;
+  font-size: 12px;
+  line-height: 14px;
+  height: 14px;
+  border: 1px solid $fore-color;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+
+.edui-colorpicker-colorcell {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.edui-colorlump {
+  position: absolute;
+  bottom: 1px;
+  left: 1px;
+  width: $icon-width;
+  height: 4px;
+}

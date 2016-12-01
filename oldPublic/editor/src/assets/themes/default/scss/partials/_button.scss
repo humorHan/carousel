@@ -1,0 +1,100 @@
+// !Firefox outline will contain child with absolute position
+// thus using psuedo element instead
+
+%button-hover {
+  background-color: #fff !important;
+
+  &:before {
+    outline: 1px solid $border-color;
+  }
+}
+
+%button-active {
+  background-color: darken($button-hover-color, 10%) !important;
+
+  .edui-button-body {
+    background: none;
+  }
+}
+
+%button-checked {
+  background-color: $button-hover-color;
+
+  &:before {
+    outline: 1px solid $border-color;
+  }
+
+  .edui-button-body:hover {
+    background-color: darken($button-hover-color, 10%);
+  }
+}
+
+#{$buttons} {
+  margin: 0 2px;
+}
+
+#{$button-wrap} {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .edui-state-hover & {
+    @extend %button-hover;
+  }
+
+  .edui-state-active & {
+    @extend %button-active;
+  }
+
+  .edui-state-opened &,
+  .edui-state-checked & {
+    @extend %button-checked;
+  }
+
+  .edui-state-disabled & {
+    .edui-icon {
+      opacity: .3;
+      filter: alpha(opacity=30);
+    }
+    .edui-button-body {
+      background: none;
+    }
+  }
+}
+
+.edui-for-rowspacingtop,
+.edui-for-rowspacingbottom,
+.edui-for-lineheight {
+  .edui-state-hover {
+    .edui-menubutton-body {
+      background-color: $button-hover-color !important;
+    }
+  }
+
+  .edui-menubutton-body {
+    padding-right: 8px;
+
+    .edui-arrow {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      background: none;
+    }
+  }
+}
+
+.edui-for-fullscreen {
+  float: right;
+}
+
+.edui-button-body:hover {
+  background-color: $button-hover-color;
+}

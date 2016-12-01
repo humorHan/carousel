@@ -1,0 +1,449 @@
+.order-status-area {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #d8d8d8;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+    position: relative;
+}
+
+.order-status-area .order-number {
+    display: inline-block;
+    color: #f54404;
+    font-size: 16px;
+    min-width: 150px;
+    margin: 0 150px 0 25px;
+    vertical-align: middle;
+}
+
+.order-status-area .order-status {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 10px;
+    color: #999999;
+    vertical-align: middle;
+}
+
+.order-status-area .order-op {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.order-status-area .order-op a {
+    display: inline-block;
+    font-size: 16px;
+    width: 140px;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    background-color: #f54404;
+    text-align: center;
+    position: relative;
+}
+
+.order-status-area .order-op a:hover {
+    background-color: #f98f68;
+}
+
+.order-status-area .order-op a.unable {
+    color: #fff;
+    background-color: #d8d8d8;
+}
+
+.order-status-area .order-op a .prompt {
+    display: none;
+}
+
+.order-status-area .order-op a.unable .prompt {
+    position: absolute;
+    display: none;
+    color: #333333;
+    font-size: 14px;
+    line-height: 18px;
+    width: 350px;
+    padding: 20px 30px;
+    border: 1px solid #f54404;
+    z-index: 1;
+    background-color: #fff;
+    top: 36px;
+    left: -150px;
+}
+
+.order-status-area .order-op a.unable:hover .prompt {
+    display: block;
+}
+
+.order-status-area .cancel-order {
+    margin: 0 25px;
+    float: right;
+    line-height: 50px;
+}
+
+.order-status-area .cancel-order a {
+    font-size: 16px;
+    color: #f54404;
+    text-align: center;
+    position: relative;
+}
+
+.order-status-area .cancel-order a:hover {
+    color: #f98f68;
+}
+
+.order-status-area .cancel-order a.unable {
+    color: #354404;
+}
+
+.order-status-area .cancel-order a .prompt {
+    display: none;
+}
+
+.order-status-area .cancel-order a.unable .prompt {
+    position: absolute;
+    display: none;
+    color: #333333;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 20px 30px;
+    border: 1px solid #f54404;
+    z-index: 1;
+    background-color: #fff;
+    width: 340px;
+    top: 20px;
+    left: -330px;
+}
+
+.order-status-area .cancel-order a.unable:hover .prompt {
+    display: block;
+}
+
+.order-prompt {
+    margin: 15px auto;
+    width: 1110px;
+    height: 40px;
+    background-color: #fef5f2;
+    color: #f54404;
+    font-size: 14px;
+    padding-left: 50px;
+    line-height: 40px;
+}
+
+.order-process {
+    text-align: center;
+    height: 80px;
+    margin: 50px 0;
+}
+
+.order-process .process-container {
+    display: inline-block;
+    color: #999999;
+    font-size: 16px;
+}
+
+.process-container .circle {
+    width: 30px;
+    height: 30px;
+    background: #d8d8d8;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.process-container .finished-circle {
+    background: #66cc66;
+}
+
+.process-container .status {
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+
+.process-container .finished-status {
+    color: #66cc66;
+}
+
+.process-container .operate-time {
+    display: none;
+}
+
+.process-container .finished-status .operate-time {
+    display: inline;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    font-size: 14px;
+    color: #66cc66;
+    width: 90px;
+    text-align: left;
+}
+
+.process-container .arrow {
+    margin: 0 50px;
+    width: 12px;
+    height: 21px;
+    background: url(/assets/img/order_process_arrow.png) no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.process-container .finished-arrow {
+    background: url(/assets/img/order_process_arrow_green.png) no-repeat;
+}
+
+.form {
+    border: 1px solid #d8d8d8;
+    margin-bottom: 20px;
+}
+
+.form .form-title {
+    height: 50px;
+    line-height: 50px;
+    margin: 0 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.form .form-title .form-title-span {
+    display: inline-block;
+    line-height: 49px;
+    border-bottom: 2px solid #252535;
+    padding: 0 13px;
+    color: #333333;
+    font-size: 16px;
+}
+
+.form-body {
+    margin: 0 20px 20px 20px;
+}
+
+.products-table {
+    color: #333333;
+    font-weight: bold;
+    width: 1158px;
+    text-align: center;
+}
+
+.products-table-th {
+    line-height: 50px;
+    color: #333333;
+    font-size: 14px;
+}
+
+.products-table td {
+    padding: 20px;
+    line-height: 20px;
+}
+
+.products-table-tb tr {
+    border-bottom: 1px solid #fff;
+    background: #FEF5F2;
+}
+
+.products-table .item-product {
+    width: 540px;
+    text-align: left;
+}
+
+.item-product-img {
+    float: left;
+    height: 80px;
+}
+
+.item-product-img a {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    box-sizing: border-box;
+    border: 1px solid #d8d8d8;
+}
+
+.item-product-img a img {
+    width: 100%;
+}
+
+.item-product-describe {
+    padding-left: 90px;
+}
+
+.products-table td a {
+    color: #333;
+}
+
+.item-product-describe .title {
+    font-weight: bolder;
+    margin: 0;
+}
+
+.item-product-describe .describe {
+    color: #666;
+    font-size: 12px;
+    margin: 0;
+    margin-top: 10px;
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.item-product-describe .describe:hover {
+    color: #f54404;
+}
+
+.item-product-describe a:hover p {
+    color: #f54404;
+    text-decoration: underline;
+}
+
+.item-price {
+    width: 100px;
+    font-size: 16px;
+    color: #f54404;
+}
+
+.item-num {
+    width: 100px;
+}
+
+.products-table-tb .on-demand {
+    text-align: left;
+    background: #fff;
+}
+
+.on-demand td {
+    padding: 20px 0 0 0;
+}
+
+.on-demand-title {
+    line-height: 40px;
+    color: #f54404;
+}
+
+.on-demand-title span {
+    font-size: 12px;
+    color: #666;
+}
+
+.order-info {
+    min-height: 275px;
+    margin-bottom: 80px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #333333;
+}
+
+.order-info span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.order-info .info-item-name {
+    font-size: 14px;
+    color: #666666;
+}
+
+.order-info-right {
+    float: right;
+    width: 300px;
+}
+
+.order-info-right .text-content {
+    width: 225px;
+    text-align: right;
+    font-size: 14px;
+    color: #333333;
+}
+
+.form-title .edit-order {
+    float: right;
+    line-height: 50px;
+}
+
+.form-title .edit-order a {
+    display: inline-block;
+    font-size: 16px;
+    width: 140px;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    background-color: #f54404;
+    text-align: center;
+}
+
+.form-title .edit-order a:hover {
+    background-color: #f98f68;
+}
+
+.admin-info {
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.admin-info .title {
+    display: inline-block;
+    color: #333333;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.admin-info .form-item {
+    padding: 18px 0 0 0;
+    position: relative;
+}
+
+.admin-info .form-item .field,
+.admin-info .form-item input {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.admin-info .form-item .field {
+    font-size: 14px;
+    color: #666666;
+    line-height: 30px;
+    text-align: right;
+    width: 90px;
+    margin-right: 5px;
+}
+
+.admin-info .form-item input.textbox {
+    font-size: 12px;
+    width: 336px;
+    line-height: 28px;
+    padding: 0 6px;
+    resize: none;
+}
+
+.admin-info .form-item .textarea {
+    vertical-align: top;
+    width: 550px;
+    height: 120px;
+    resize: none;
+    font-size: 12px;
+    padding: 6px;
+    line-height: 20px;
+}
+
+.admin-info .confirm-update {
+    display: block;
+    width: 140px;
+    text-align: center;
+    background: #f54404;
+    color: #fff;
+    font-size: 16px;
+    height: 36px;
+    line-height: 36px;
+    cursor: pointer;
+    margin: 20px 0 20px 95px;
+}
+
+.admin-info .confirm-update:hover {
+    background-color: #f98f68;
+}

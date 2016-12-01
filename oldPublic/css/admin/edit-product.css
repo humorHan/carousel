@@ -1,0 +1,51 @@
+.product-name {
+    color: #f54404;
+}
+
+.form {
+    margin-bottom: 20px;
+}
+
+.form .form-title {
+    height: 50px;
+    line-height: 50px;
+    margin: 0 20px;
+}
+
+.form .form-title .form-title-span {
+    display: inline-block;
+    line-height: 30px;
+    border-bottom: 2px solid #252535;
+    padding: 0 13px;
+    color: #333333;
+    font-size: 16px;
+}
+
+.form-body {
+    margin: 0 20px 20px 20px;
+}
+
+div.confirm-submit {
+    height: 70px;
+    margin-bottom: 30px;
+}
+
+.confirm-submit span {
+    float: right;
+    line-height: 70px;
+}
+
+.confirm-submit span a {
+    display: inline-block;
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    background-color: #f54404;
+    text-align: center;
+}
+
+.confirm-submit span a:hover {
+    background-color: #f98f68;
+}

@@ -1,0 +1,134 @@
+@(product: services.PrintService.ProductDetail)(implicit pageParam: views.params.PageParam)
+
+@main(product.displayTitle, keywords = product.metaKeywords, description = product.metaDescription) {
+    <!-- css 们 -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/product.css">
+} {
+    <!-- 网页主体 -->
+    <div class="box">
+        <div id="error_tip" class="error-tip"></div>
+        <div class="container">
+            <p class="breadcrumb">当前位置：<a href="/">首页</a> > <a>@product.categoryName</a> >
+                <a class="current" href="/product?id=@product.id">@product.title</a>
+            </p>
+            <div class="product-list">
+                <div class="image-zoom">
+                    <div id="image_show" class="image-zoom-show">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAAA
+       AACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <span class="zoom-area"></span>
+                    </div>
+                    <div id="image_big">
+                        <img src="">
+                    </div>
+                    <div class="image-zoom-thumb">
+                        <ul id="imageList" class="image-zoom-list"></ul>
+                    </div>
+                </div>
+                <div class="product-right-side">
+                    <a href="/product/custom" class="on-demand" title="按需定制"></a>
+                    <a href="/faq/account" class="q-a" title="常见问题"></a>
+                </div>
+                <div class="product-list-item">
+                    <p class="product-name" id="product_name">@product.title</p>
+                    <p class="product-price">￥<span id="product_price"></span></p>
+                    <div class="cut-off"></div>
+                    <div class="product-body">
+                        @for(sheetItem <- product.sheetList) {
+                            @if(sheetItem.isButton) {
+                                <div class="product-item product-type">
+                                    <span class="attr">@sheetItem.name：</span>
+                                    <span class="vals">
+                                        @for(value <- sheetItem.values) {
+                                            <a class="val" value="@value">@value</a>
+                                        }
+                                    </span>
+                                </div>
+                            } else {
+                                <div class="product-item product-custom" data-need="@sheetItem.displayIsRequired">
+                                    <span class="attr" >@sheetItem.name：</span>
+                                    <div class="customs ok">
+                                        <div class="custom-item">自定义：
+                                            @for(textField <- sheetItem.fields) {
+                                                @if(textField.isLabel) {
+                                                    <span class="tag">@textField.displayValue</span>
+                                                } else {
+                                                    <input class="custom-input" data-max="@textField.displayMax" data-min="@textField.displayMin" data-type="@textField.displayType" data-value="@textField.displayDefault" value="@textField.displayDefault">
+                                                }
+                                            }
+                                            <a class="confirm-btn">OK</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        <div class="product-type">
+                            <span class="attr">@product.displayQuantityName：</span>
+                            <span class="vals">
+                                <div class="add-num">
+                                    <span class="minus disabled">-</span>
+                                    <input id="product_num" max-num="100000" class="value">
+                                    <span class="plus">+</span>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="cut-off"></div>
+                    <div class="product-foot">
+                    <a id="add_to_cart">+加入购物车</a>
+                </div>
+                </div>
+            </div>
+            <div class="product-detail">
+                <div class="product-detail-recommend">
+                    <p class="product-detail-head">热销商品</p>
+                    <!-- 热销商品列表 -->
+                    <ul class="product-recommend-list" id="recommd_lists"></ul>
+                </div>
+                <div class="product-detail-content">
+                    <p class="product-detail-head">
+                        商品介绍<span></span>
+                    </p>
+                    <div id="product_details">
+                        @Html(product.detail)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-layer"></div>
+    <div class="modal" id="add_cart">
+        <div class="modal-head"><a class="close"></a></div>
+        <div class="modal-body">
+            <div class="tip">
+                <div class="message success">成功加入购物车</div>
+            </div>
+        </div>
+        <div class="modal-foot"><a class="btn right" href="/cart">去购物车结算></a><a class="btn left no-stay"><继续订购</a></div>
+    </div>
+    <div class="modal" id="no_product">
+        <div class="modal-head"></div>
+        <div class="modal-body">
+            <div class="tip">
+                <div class="message sad">找不到该商品</div>
+            </div>
+        </div>
+        <div class="modal-foot"><a class="btn right">好的</a><a class="btn left" href="/">去首页看看</a></div>
+    </div>
+    <div class="modal" id="no_confirm">
+        <div class="modal-head"><a class="close"></a></div>
+        <div class="modal-head"></div>
+        <div class="modal-body">
+            <div class="tip">
+                <div class="message sad">您还有属性未经确认，请点击OK确认后再提交!</div>
+            </div>
+        </div>
+        <div class="modal-foot"><a class="btn right no-stay">好的</a><a class="btn left" href="/">去首页看看</a></div>
+    </div>
+} {
+    <script>
+    var productMap = @Html(product.displayPriceMap);
+    </script>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/product.js"></script>
+}

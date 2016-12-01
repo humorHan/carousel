@@ -1,0 +1,140 @@
+.product-right-side .printing-q-a {
+    background-image: url("/assets/img/printing_q&a.png");
+}
+
+.product-right-side .printing-q-a:hover {
+    background-image: url("/assets/img/printing_q&a_hover.png");
+}
+
+.on-demand-name {
+    font-size: 24px;
+    font-weight: bolder;
+    color: #333;
+    display: inline;
+    line-height: 24px;
+}
+
+.on-demand-prompt {
+    font-size: 14px;
+    color: #f54404;
+    display: inline;
+    line-height: 24px;
+}
+
+.on-demand-body .form-item {
+    padding: 18px 0 0 0;
+    position: relative;
+}
+
+.on-demand-body .form-item .field,
+.on-demand-body .form-item input,
+.on-demand-body .form-item .required,
+.on-demand-body .form-item .alt {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.on-demand-body .form-item .field {
+    font-size: 14px;
+    color: #666666;
+    line-height: 30px;
+    text-align: right;
+    width: 80px;
+    margin-right: 5px;
+}
+
+.on-demand-body .form-item input.textbox {
+    font-size: 12px;
+    width: 236px;
+    line-height: 28px;
+    /* 修复IE浏览器显示混乱 */
+    height: 28px;
+    padding: 0 6px;
+    resize: none;
+}
+
+.on-demand-body .form-item input.placeholder,
+.on-demand-body .form-item textarea.placeholder {
+    color: #999999;
+}
+
+.on-demand-body .form-item .required {
+    color: #f54404;
+    font-size: 20px;
+    padding: 0 0 0 7px;
+    line-height: 30px;
+    position: relative;
+    top: 4px;
+}
+
+.on-demand-body .form-item .msg {
+    color: #f54404;
+    font-size: 12px;
+    line-height: 30px;
+    margin: 0 7px;
+    vertical-align: middle;
+    display: none;
+}
+
+.on-demand-body .error .msg {
+    display: inline-block;
+}
+
+.on-demand-body .form-item .alt {
+    color: #999999;
+    font-size: 12px;
+    line-height: 30px;
+    margin-left: 7px;
+}
+
+.on-demand-body .icon-help {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 8px;
+    vertical-align: middle;
+    background: url(/assets/img/on-demand_icon_help.png) no-repeat;
+    display: inline-block;
+}
+
+.on-demand-body .icon-help:hover {
+    background: url(/assets/img/on-demand_icon_help_hover.png) no-repeat;
+}
+
+.on-demand-body .icon-help .help-prompt {
+    cursor: text;
+    position: absolute;
+    display: none;
+    color: #333333;
+    font-size: 12px;
+    padding: 10px 20px;
+    border: 1px solid #f54404;
+    z-index: 1;
+    width: 338px;
+    background-color: #fff;
+    top: 20px;
+    left: -360px;
+}
+
+.on-demand-body .icon-help:hover .help-prompt {
+    display: block;
+}
+
+.on-demand-body select {
+    height: 28px;
+    font-size: 12px;
+    vertical-align: middle;
+    resize: none;
+    width: 248px;
+}
+
+.on-demand-body .form-item .textarea {
+    vertical-align: top;
+    width: 500px;
+    height: 120px;
+    resize: none;
+    font-size: 12px;
+    padding: 6px;
+    line-height: 20px;
+}
+

@@ -1,0 +1,22 @@
+{
+  "name": "RCEditor",
+  "version": "0.0.1",
+  "description": "Another rich content editor",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "js-base64": "~2.1.7"
+  },
+  "devDependencies": {
+    "ueditor": "~1.4.3"
+  },
+  "authors": [
+    "Dolphin Wood <dolphin.w.e@gmail.com>"
+  ],
+  "homepage": "https://idiotwu.me",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src/assets/vendor"
+  ]
+}

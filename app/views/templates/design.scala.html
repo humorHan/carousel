@@ -1,0 +1,229 @@
+@()(implicit pageParam: views.params.PageParam)
+
+@main("设计报价") {
+    <style type="text/css">
+        .design-table {
+            border-collapse: collapse;
+            margin: 50px auto 100px;
+        }
+
+        .design-table thead {
+            font-size: 16px;
+            color: #222;
+            font-weight: bold;
+        }
+
+        .design-table .title {
+            color: black;
+            font-size: 20px;
+        }
+
+        .design-table tbody {
+            font-size: 15px;
+            color: #222;
+        }
+
+        .design-table td {
+            border: 2px solid #b8b8b8;
+            text-align: center;
+            vertical-align: middle;
+            padding: 12px 10px;
+        }
+
+        .design-table tfoot {
+            color: #555;
+            font-size: 14px;
+        }
+    </style>
+} {
+	<div class="box">
+        <div class="container">
+        	<p class="breadcrumb">当前位置：<a href="/">首页</a> > <a>设计类</a> > <a class="current" href="#">设计报价</a></p>
+		    <table class="design-table">
+		        <thead>
+		            <tr class="title">
+		                <td colspan="5">设计类报价</td>
+		            </tr>
+		            <tr>
+		                <td>分类</td>
+		                <td>设计服务</td>
+		                <td>详情</td>
+		                <td>单位</td>
+		                <td>设计单价（元）</td>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <tr>
+		                <td rowspan="4">主视觉</td>
+		                <td>广告画面设计</td>
+		                <td></td>
+		                <td>幅</td>
+		                <td>500</td>
+		            </tr>
+		            <tr>
+		                <td rowspan="2">海报设计</td>
+		                <td>普通海报</td>
+		                <td>幅</td>
+		                <td>500</td>
+		            </tr>
+		            <tr>
+		                <td>创意海报</td>
+		                <td>幅</td>
+		                <td>1000</td>
+		            </tr>
+		            <tr>
+		                <td>活动背景板设计</td>
+		                <td>留影板、签到板、舞台背板等</td>
+		                <td>个</td>
+		                <td>500</td>
+		            </tr>
+		            <tr>
+		                <td rowspan="11">延展设计</td>
+		                <td>易拉宝简单设计</td>
+		                <td></td>
+		                <td>个</td>
+		                <td>200</td>
+		            </tr>
+		            <tr>
+		                <td>易拉宝创意设计</td>
+		                <td></td>
+		                <td>个</td>
+		                <td>500</td>
+		            </tr>
+		            <tr>
+		                <td rowspan="3">单页宣传品设计</td>
+		                <td>单页</td>
+		                <td>套</td>
+		                <td>500</td>
+		            </tr>
+		            <tr>
+		                <td>对折页</td>
+		                <td>套</td>
+		                <td>800</td>
+		            </tr>
+		            <tr>
+		                <td>三折页</td>
+		                <td>套</td>
+		                <td>1000</td>
+		            </tr>
+		            <tr>
+		                <td>手提袋</td>
+		                <td>单面300/双面500</td>
+		                <td>面</td>
+		                <td>300</td>
+		            </tr>
+		            <tr>
+		                <td>门票/优惠券</td>
+		                <td>单面300/双面500</td>
+		                <td>面</td>
+		                <td>300</td>
+		            </tr>
+		            <tr>
+		                <td>封面设计</td>
+		                <td>封面封底</td>
+		                <td>套</td>
+		                <td>1200</td>
+		            </tr>
+		            <tr>
+		                <td>画册设计</td>
+		                <td>根据数量和要求调整，最低至80元/P，最高至400元/P</td>
+		                <td>P</td>
+		                <td>300</td>
+		            </tr>
+		            <tr>
+		                <td rowspan="2">杂志书刊广告页设计</td>
+		                <td>排版类</td>
+		                <td>张</td>
+		                <td>200</td>
+		            </tr>
+		            <tr>
+		                <td>形象类</td>
+		                <td>张</td>
+		                <td>500</td>
+		            </tr>
+		            <tr>
+		                <td rowspan="13">偶发设计</td>
+		                <td>图片修改</td>
+		                <td></td>
+		                <td>张</td>
+		                <td>300</td>
+		            </tr>
+		            <tr>
+		                <td>网站页面设计</td>
+		                <td></td>
+		                <td>套</td>
+		                <td>2500</td>
+		            </tr>
+		            <tr>
+		                <td>logo标志设计</td>
+		                <td></td>
+		                <td>套</td>
+		                <td>1800</td>
+		            </tr>
+		            <tr>
+		                <td rowspan="2">VI设计</td>
+		                <td>基础部分</td>
+		                <td>项</td>
+		                <td>300</td>
+		            </tr>
+		            <tr>
+		                <td>应用部分（含手册排版，logo和吉祥物/卡通形象除外）</td>
+		                <td>项</td>
+		                <td>200-400</td>
+		            </tr>
+		            <tr>
+		                <td rowspan="3">产品包装设计</td>
+		                <td>简易包装或瓶贴</td>
+		                <td>款</td>
+		                <td>4000</td>
+		            </tr>
+		            <tr>
+		                <td>包装盒、包装袋</td>
+		                <td>款</td>
+		                <td>8000</td>
+		            </tr>
+		            <tr>
+		                <td>精品包装</td>
+		                <td>款</td>
+		                <td>15000</td>
+		            </tr>
+		            <tr>
+		                <td>CD设计</td>
+		                <td>封面+封底（CD包装外盒）+CD盘面</td>
+		                <td>套</td>
+		                <td>900</td>
+		            </tr>
+		            <tr>
+		                <td>名片设计</td>
+		                <td>正背</td>
+		                <td>张</td>
+		                <td>300</td>
+		            </tr>
+		            <tr>
+		                <td>卡类（会员卡、贵宾卡等）</td>
+		                <td>正背</td>
+		                <td>张</td>
+		                <td>300</td>
+		            </tr>
+		            <tr>
+		                <td rowspan="2">吉祥物/卡通形象设计</td>
+		                <td>标准卡通形象设计</td>
+		                <td>套</td>
+		                <td>3000</td>
+		            </tr>
+		            <tr>
+		                <td>标准卡通形象设计以及6个不同动作神态延展</td>
+		                <td>套</td>
+		                <td>6000</td>
+		            </tr>
+		        </tbody>
+		        <tfoot>
+		            <tr>
+		                <td colspan="5">注：同系列设计价格减半，特殊要求另议，此价格根据实际资料和要求高低而变化，以最终商定为准。</td>
+		            </tr>
+		        </tfoot>
+		    </table>
+		</div>
+    </div>
+} {
+}

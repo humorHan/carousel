@@ -1,0 +1,51 @@
+%tooltip {
+  position: absolute;
+  left: 50%;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+  transition: all 0s .3s, opacity .3s 0s;
+  // set scale(0) to fix pointer-events in IE10-
+  transform: translateX(-50%) scale(0);
+}
+
+[data-tip] {
+  position: relative;
+
+  &:before {
+    @extend %tooltip;
+    content: '';
+    top: 25px;
+    @include triangle(top, 5px, rgba(0, 0, 0, .75));
+  }
+
+  &:after {
+    @extend %tooltip;
+    content: attr(data-tip);
+    top: 35px;
+    padding: 3px 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .75);
+    border-radius: 3px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .75);
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      opacity: 1;
+      transition-delay: 0s, .5s;
+      transition-duration: 0s, .3s;
+      transform: translateX(-50%) scale(1);
+    }
+  }
+
+  .edui-state-disabled & {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "RCEditor",
+  "version": "0.0.2",
+  "description": "Another rich content editor based on UEditor",
+  "copyright": "2015",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "grunt --verbose",
+    "postinstall": "bower install"
+  },
+  "author": {
+    "name": "Dolphin Wood",
+    "email": "dolphin.w.e@gmail.com",
+    "url": "https://idiotwu.me"
+  },
+  "engines": {
+    "node": "^0.10.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.11.2",
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": "~2.2.0",
+    "grunt-cache-bust": "~0.4.4",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-copy": "~0.7.0",
+    "grunt-contrib-cssmin": "~0.11.0",
+    "grunt-contrib-imagemin": "^0.9.3",
+    "grunt-contrib-sass": "~0.9.1",
+    "grunt-contrib-uglify": "~0.7.0",
+    "matchdep": "~0.3.0"
+  }
+}

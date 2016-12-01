@@ -1,0 +1,15 @@
+@(description: String = "", keywords: String = "")
+
+<meta charset="UTF-8">
+@if(description.isEmpty) {
+    <meta name="description" content="酱印网—中国领先的互联网印刷和设计服务平台。云印技术为您提供最优质的名片、会员卡、宣传单、折页、易拉宝、X展架、封套、画册、宣传册、手提袋等产品多多印和设计服务!">
+} else {
+    <meta name="description" content="@description">
+}
+@if(keywords.isEmpty) {
+    <meta name="keywords" content="酱印,soyyin.com,云印技术,酱印网,小酱油,互联网印刷,设计,名片,宣传单,折页,展架,画册,印刷,印刷O2O,公关会展">
+} else {
+    <meta name="keywords" content="@keywords">
+}
+<meta name="author" content="soyyin.com">
+<meta name="copyright" content="Copyright © 2016 soyyin.com. All rights reserved.">

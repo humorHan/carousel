@@ -1,0 +1,76 @@
+@()(implicit param: views.params.PageParam)
+@import views.params._
+
+<div class="box header-nav">
+    <div class="container">
+        @if(param.isHome) {
+        <div class="all_print show">
+        } else {
+        <div class="all_print">
+        }
+            <a href="/"><img class="all-print-img" src="/assets/img/catalog.png">全部商品分类</a>
+            <div class="nav-catalog">
+                <ul class="nav-catalog-list">
+                    @for(category <- param.categories) {
+                        <!-- 一级分类 -->
+                        <li class="nav-catalog-item">
+                            <a class="nav-catalog-content">
+                                <span class="title">@category.name</span>
+                                <p class="descript">
+                                    @Html(category.description)
+                                </p>
+                            </a>
+                            <!-- 二级分类 -->
+                            <div class="child-catalog">
+                                @for(products <- category.productGroups) {
+                                    <!-- 每一列显示7个 -->
+                                    <ul>
+                                        @for(product <- products) {
+                                            <li>
+                                                <a href="/product?id=@product.id">
+                                                    <img src="@product.coverUrl?imageView2/1/w/40/h/40/">
+                                                    <span class="text">@product.brief</span>
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                }
+                            </div>
+                        </li>
+                    }
+                    <li class="nav-catalog-item">
+                        <a class="nav-catalog-content" href="/equipmentLeasing">
+                            <span class="title">设备租赁 </span>
+                            <p class="descript">灯光 音响 视频 道具</p>
+                        </a>
+                    </li>
+                    <li class="nav-catalog-item">
+                        <a class="nav-catalog-content" href="/design">
+                            <span class="title">设计服务</span>
+                            <p class="descript">主视觉 延展设计 偶发设计</p>
+                        </a>
+                    </li>
+                    <li class="nav-catalog-item">
+                        <a class="nav-catalog-content" href="http://pr.soyyin.com/" target="_blank">
+                            <span class="title">公关会展</span>
+                            <p class="descript">整体策划 会议执行 公关传播</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul class="nav-tab">
+            <li class="special-product">
+                <a>特价商品</a>
+                <div class="special-triangle"></div>
+                <ul class="special-list">
+                    <li><a class="special yilabao" href="/product?id=57">特价易拉宝</a></li>
+                    <li><a class="special zhanjia" href="/product?id=58">特价门型展架</a></li>
+                    <li><a class="special danye" href="/product?id=59">特价单页</a></li>
+                </ul>
+            </li>
+            <li><a href="/product/custom">按需定制</a></li>
+            <li><a href="http://pr.soyyin.com/" target="_blank">公关会展</a></li>
+        </ul>
+    </div>
+</div>

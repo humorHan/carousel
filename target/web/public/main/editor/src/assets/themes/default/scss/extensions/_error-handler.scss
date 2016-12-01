@@ -1,0 +1,24 @@
+#editor-error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0 1em;
+  width: 100%;
+  max-height: 0;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  background: #d9534f;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  z-index: -1;
+  box-sizing: border-box;
+  transition: max-height .5s 0s, z-index 0s .5s;
+
+  &.show {
+    max-height: 40px;
+    z-index: 1000;
+    transition-delay: 0s;
+  }
+}

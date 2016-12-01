@@ -1,0 +1,42 @@
+@()(implicit pageParam: views.params.PageParam)
+@import views.html.templates._
+
+@main("物流查询") {
+	<link rel="stylesheet" type="text/css" href="/assets/css/sidebar.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/help.css">
+} {
+	<div class="box helper_box">
+        <div class="container">
+			<div class="helper_layout">
+				<dl id="sidebar" class="sidebar">
+				    <dt><a href="javascript:;">常见问题</a></dt>
+				    <dd><a href="/faq/account">账号类</a></dd>
+				    <dd><a href="/faq/order">订单类</a></dd>
+				    <dd><a href="/faq/payment">支付类</a></dd>
+				    <dd><a href="/faq/distribution">配送类</a></dd>
+				    <dd><a href="/faq/printing">印刷类</a></dd>
+				    <dd><a href="/faq/other">其他类</a></dd>
+				    <dt><a href="javascript:;">印刷知识</a></dt>
+				    <dd><a href="/help/upload">上传文件须知</a></dd>
+				    <dd><a href="/help/chromatism">关于色差</a></dd>
+				    <dd><a href="/help/download">空白模板下载</a></dd>
+				    <dt><a href="javascript:;">订购指南</a></dt>
+				    <dd><a href="/help/process">订购流程</a></dd>
+				    <dd><a href="/help/logistics" class="sel">物流查询</a></dd>
+				    <dt><a href="javascript:;">售后服务</a></dt>
+				    <dd><a href="/help/returns">退换货说明</a></dd>
+		    		<dt></dt>
+				</dl>
+				<div class="helper_right_container">
+					<div class="helper_title"><span>物流查询</span></div>
+					<div class="content_container">
+						<iframe name="kuaidi100" src="http://www.kuaidi100.com/frame/app/index2.html" width="700" height="400" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+} {
+<!-- js 们 -->
+}

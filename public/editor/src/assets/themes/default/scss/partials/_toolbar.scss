@@ -1,0 +1,40 @@
+.edui-editor-toolbarbox {
+  position: relative;
+  box-shadow: 0 1px 4px rgba(204, 204, 204, .6);
+}
+
+.edui-editor-toolbarboxouter {
+  border-bottom: 1px solid $border-color;
+  background-color: $back-color;
+  border-radius: 3px 3px 0 0;
+}
+
+.edui-toolbar {
+  padding: 4px 5px;
+
+  .edui-arrow {
+    display: inline-block;
+    width: 8px;
+    height: $icon-height;
+
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -2px;
+      @include triangle(bottom, 4px, $fore-color);
+    }
+
+    &:hover {
+      outline: 1px solid $border-color;
+      background: $button-hover-color;
+    }
+  }
+}
+
+.edui-box {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}

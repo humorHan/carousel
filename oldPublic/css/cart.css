@@ -1,0 +1,202 @@
+.cart-box {
+    background: #fff;
+    min-height: 400px;
+}
+
+.cart-banner {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.empty {
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 120px 0;
+    background: url("/assets/img/cart_empty.png") no-repeat;
+    background-position: 280px 120px;
+}
+
+.content {
+    font-size: 18px;
+    color: #999;
+    font-weight: bold;
+    padding-left: 100px;
+}
+
+.cart-box .btn {
+    width: 200px;
+    line-height: 58px;
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    background: #f54404;
+    height: 58px;
+    margin: 60px auto;
+}
+
+.my-cart ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.my-cart li {
+    display: inline-block;
+}
+
+.cart-table-th {
+    line-height: 50px;
+    border: 1px solid #d8d8d8;
+    background: #f9f9f9;
+    font-size: 16px;
+    color: #f54404;
+    padding: 0 20px;
+}
+
+.cart-table-th a {
+    float: right;
+    color: #f54404;
+}
+
+.cart-table-th a:hover {
+    text-decoration: underline;
+}
+
+.cart-table-tb .item-select {
+    width: 1px;
+}
+
+.item-total {
+    font-size: 16px;
+    color: #f54404;
+}
+
+.cart-table-table .item-deal a {
+    color: #999;
+    font-size: 12px;
+    display: block;
+    cursor: pointer;
+}
+
+.item-deal a:hover {
+    text-decoration: underline;
+    color: #f54404;
+}
+
+.check-box {
+    width: 16px;
+    display: inline-block;
+    background: url("/assets/img/no_check.png") no-repeat;
+    background-position: 0px 1px;
+    cursor: pointer;
+}
+
+.check-box input {
+    visibility: hidden;
+}
+
+.checked {
+    background-image: url("/assets/img/checked.png")
+}
+
+.item-select input,
+.item-select label {
+    cursor: pointer;
+}
+
+.all-select .item-select {
+    position: relative;
+}
+
+.all-select .item-select label {
+    position: absolute;
+    width: 40px;
+    left: 36px;
+    top: 20px;
+}
+
+.cart-table-tf {
+    color: #333;
+    height: 60px;
+    line-height: 60px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    box-sizing: border-box;
+    margin: 20px 0 40px;
+    padding-left: 20px;
+}
+
+.cart-table-tf div {
+    display: inline-block;
+}
+
+.cart-table-tf .check-box {
+    background-position: 0px 20px;
+}
+
+.cart-table-tf .item-select label {
+    left: 22px;
+    top: 0px;
+}
+
+.selected {
+    background: #fef5f2;
+}
+
+.selected .check-box {
+    background-image: url("/assets/img/checked.png");
+}
+
+.submit-btn {
+    display: inline-block;
+    float: right;
+    background: #f54404;
+    color: #fff;
+    width: 200px;
+    text-align: center;
+    font-size: 20px;
+    margin-top: -1px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #f98f68;
+}
+
+.submit-btn-disabled,
+.submit-btn-disabled:hover {
+    color: #999;
+    background: #e5e5e5;
+    cursor: not-allowed;
+}
+
+.price-sum {
+    float: right;
+    margin-right: 30px;
+    color: #666;
+    height: 60px;
+    line-height: 60px;
+}
+
+.price-sum .txt {
+    font-size: 12px;
+}
+
+.price-sum .price {
+    font-size: 24px;
+    color: #f54404;
+    font-weight: bolder;
+}
+
+.deleteSelect {
+    cursor: pointer;
+    margin-left: 80px;
+    color: #666;
+}
+
+.deleteSelect:hover {
+    color: #f54404;
+    text-decoration: underline;
+}
