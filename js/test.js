@@ -4,12 +4,10 @@
 require("common/base.less");
 var testCarousel = require("component/carousel/carousel.js");
 
-testCarousel("dom1", 3, true, {
-    "width": 100,
-    "height": 80
-}, 30000, 500);
 
-testCarousel("dom2", 3, true, {
-    "width": 100,
-    "height": 80
-}, 2000, 500);
+
+testCarousel({
+    dom: 'dom1',
+    data: data.banners,
+    hasPreNext: true
+});
