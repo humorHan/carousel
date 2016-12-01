@@ -1,8 +1,8 @@
 /**
- * Created by humorHan on 2016/5/26.
+ * Created by humorHan on 2016/11/18.
  */
 var art = require('tmodjs-loader/runtime');
-var u=require("util/util");
+var config = require("config/config.js");
 
 //时间戳转化方法
 art.helper('dateFormat', function (date, format) {
@@ -34,19 +34,22 @@ art.helper('dateFormat', function (date, format) {
     });
     return format;
 });
-//获取科目
-art.helper('getSubjectName',function(subject){
-    return u.getSubjectName(subject);
+
+//得到图片地址
+art.helper('getUrl',function(url){
+    return config.SOURCE + url;
 });
-//获取阶段
-art.helper('getStageStr',function(stage){
-        return u.getStageStr(stage);
-});
-//转码 正确答案
-art.helper('unEscape', function(answer){
-    if (!answer){
-        return "未作答";
-    } else {
-        return unescape(answer);
+
+//处理价格 3900变成39.00
+art.helper('processPrice', function(p){
+    var str = p + "";
+    var arr = str.split("");
+    if (arr.length === 1) {
+        arr.unshift("0", "0");
+    } else if (arr.length === 2) {
+        arr.unshift("0");
     }
+    arr.splice(arr.length - 2, 0, ".");
+    var real = arr.join("");
+    return real;
 });
