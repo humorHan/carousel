@@ -1,0 +1,39 @@
+/**
+ * Created by humorHan on 16/11/15.
+ */
+
+css:
+\.([a-zA-Z][a-zA-Z0-9]+)([:\s\{-])
+
+html:
+class\s*=\s*\"\s*([a-zA-z\-0-9]+)(\s+[a-zA-Z\-0-9]+)*\s*\"
+
+
+
+
+
+
+
+
+
+//oldLogin.css和登录弹框html还是以前的
+
+
+
+
+
+
+
+
+
+
+
+
+
+//测试包
+
+  1. 先执行old命令,平时开发用bundle命令就可以了 -> 节省打包时间
+
+//正式包
+
+  2. 更改jq的引入(2)以及config文件中图片cdn地址 -> 执行package命令 -> 拷贝出一份不带hash的css和js(新旧项目融合 临时方案)

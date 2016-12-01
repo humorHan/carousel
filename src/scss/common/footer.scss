@@ -1,0 +1,437 @@
+// old footer and login
+@import "./_color.scss";
+
+/*
+<div class="footer box">
+    <div class="container">
+        <dl class="footer-title">
+            <dt>
+                <span>帮助中心</span>
+            </dt>
+            <dd>
+                <a href="/faq/distribution" target="_blank">配送方式及运费</a>
+            </dd>
+            <dd>
+                <a href="/help/process" target="_blank">订购流程</a>
+            </dd>
+            <dd>
+                <a href="/product/custom" target="_blank">按需定制</a>
+            </dd>
+            <dd>
+                <a href="/faq/printing" target="_blank">常见问题</a>
+            </dd>
+            <dd>
+                <a href="/help/returns" target="_blank">退换货说明</a>
+            </dd>
+        </dl>
+        <dl class="footer-title">
+            <dt>
+                <span>印刷知识</span>
+            </dt>
+            <dd>
+                <a href="/help/upload">上传文件须知</a>
+            </dd>
+            <dd>
+                <a href="/help/chromatism" target="_blank">关于色差</a>
+            </dd>
+            <dd>
+                <a href="/help/download" target="_blank">空白模板下载</a>
+            </dd>
+        </dl>
+        <dl class="footer-title">
+            <dt>
+                <span>友情链接</span>
+            </dt>
+            <dd>
+                <a href="http://www.xiaojiangyou.com" target="_blank">小酱油活动平台</a>
+            </dd>
+            <dd>
+                <a href="http://www.xiaojiangyou.com/download.html" target="_blank">小酱油APP下载</a>
+            </dd>
+            <dd>
+                <a href="http://pr.soyyin.com" target="_blank">小酱油传媒</a>
+            </dd>
+        </dl>
+        <dl class="footer-title">
+            <dt>
+                <span>关于酱油网</span>
+            </dt>
+            <dd>
+                <a href="/about/introduction">酱印网简介</a>
+            </dd>
+            <dd>
+                <a href="/about/contactus">联系我们</a>
+            </dd>
+            <dd>
+                <a href="/about/services">服务声明</a>
+            </dd>
+        </dl>
+        <dl class="footer-title">
+            <dt>
+                <span>下单QQ</span>
+            </dt>
+            <dd>
+                <a>2852519982</a>
+            </dd>
+            <dd class="qqalign">
+                <a class="btn" target="_blank" href="http://q.url.cn/s/9VHYO">QQ在线客服</a>
+            </dd>
+        </dl>
+        <dl class="footer-title">
+            <dt>
+                <span>下单热线</span>
+            </dt>
+            <dd>
+                <a>400-038-6898</a>
+            </dd>
+        </dl>
+        <dl class="footer-title">
+            <dt>
+                <span>扫一扫二维码</span>
+            </dt>
+            <dt>
+                <span>联系油妹下单</span>
+            </dt>
+            <dt>
+                <img src="/assets/img/yinshua_qrcode.jpeg">
+            </dt>
+        </dl>
+        <div style="clear: both"></div>
+        <p class="copyright">
+            <span>Copyright © 2015-2016</span>
+            <span>北京小酱油文化传媒有限公司</span>
+            <span>京ICP备16020515号</span>
+        </p>
+    </div>
+</div>
+<div id="login_box_shade_layer" class="login-box-shade-layer"></div>
+<div id="login_box" class="login-box">
+    <div class="login-box-head">
+        <a id="login_box_close" class="close" title="关闭"></a>
+        <div>登录酱印网</div>
+    </div>
+    <div class="divide-bar"></div>
+    <div class="login-box-body">
+        <ul id="login_type" class="login-type">
+            <li class="login-type-checked" data-type="commonLog">普通登录</li>
+            <li data-type="quickLog">验证码快捷登录</li>
+        </ul>
+        <form class="form-type" id="commonLog">
+            <div class="form-control">
+                <label class="sr-only">手机号</label>
+                <input id="login_item_username" class="control-input" type="text" placeholder="请输入手机号或邮箱">
+            </div>
+            <div class="form-control">
+                <label class="sr-only">密码</label>
+                <input id="login_item_password" class="control-input password" type="password" placeholder="请输入密码">
+                <div class="show-login-tip" id="login_error_tip"></div>
+            </div>
+        </form>
+        <form class="form-type" id="quickLog">
+            <div class="form-control">
+                <label class="sr-only">手机号</label>
+                <input id="login_item_phone" class="control-input" type="text" placeholder="请输入手机号">
+            </div>
+            <div id="log_show_captcha" class="form-control">
+                <label class="sr-only">图形验证码</label>
+                <input id="login_item_captcha" class="control-input captcha" type="text" placeholder="请输入图形验证码">
+                <img id="login_show_captcha_img" class="input-right" alt="看不清楚？点我换一张" title="看不清楚？点我换一张">
+            </div>
+            <div class="form-control">
+                <label class="sr-only">验证码</label>
+                <input id="login_item_code" class="control-input code" text="text" placeholder="请输入验证码">
+                <a id="get_phone_code" class="input-right btn-enable">获取验证码</a>
+                <div class="show-login-tip" id="quick_login_error_tip"></div>
+            </div>
+        </form>
+        <div class="login-btn">
+            <a class="forget-password" href="http://www.xiaojiangyou.com/#findpassword/person" target="_blank">忘记密码？</a>
+            <a id="auto_login" class="auto-login"><span></span>自动登录</a>
+            <a class="btn btn-enable" id="login_submit" data-type="commonLog">登 录</a>
+        </div>
+        <div>
+            <div class="register">
+                还没有账号？<a href="/static/register.html">立即注册</a>
+            </div>
+        </div>
+    </div>
+</div>
+*/
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.footer {
+  background-color: $white;
+}
+
+.footer-title {
+  float: left;
+  margin: 60px 36px 20px;
+  line-height: 1.5;
+}
+
+.footer-title dt {
+  color: #fff;
+  padding: 14px 0;
+}
+
+.footer-title dd {
+  font-size: 12px;
+  margin: 0;
+  text-decoration: none;
+  padding: 6px 0;
+}
+
+.footer-title a:hover {
+  text-decoration: underline;
+}
+
+.footer-title .btn {
+  width: 120px;
+  text-align: center;
+  padding: 6px 0;
+  display: block;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.footer-title .btn:hover {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+  font-size: 10px;
+  color: #fff;
+  text-align: center;
+  margin: 0 0 40px 0;
+}
+
+.login-box-shade-layer {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.login-box {
+  display: none;
+  color: #252535;
+  background-color: #fff;
+  width: 420px;
+  min-height: 260px;
+  padding: 20px;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  margin-left: -210px;
+  z-index: 1002;
+  box-sizing: border-box;
+}
+
+.login-box .login-box-head {
+  height: 30px;
+}
+
+.login-box .close {
+  float: right;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: url("/assets/img/close.png") no-repeat;
+}
+
+.login-box .close:hover {
+  background-image: url("/assets/img/close_hover.png");
+}
+
+.login-box .divide-bar {
+  margin-bottom: 0;
+  border-top: 1px solid #ddd;
+  height: 0;
+  width: 420px;
+  position: relative;
+  left: -20px;
+}
+
+.login-box .login-box-body {
+  padding: 10px;
+}
+
+.login-box-body .login-type {
+  color: #999999;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.login-box-body .login-type .login-type-checked {
+  color: #fb8152;
+  border-color: #fb8152;
+}
+
+.login-box-body .login-type li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 0;
+  border-bottom: 1px solid #999;
+  width: 177px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.login-box-body .form-control {
+  margin: 20px 0;
+  line-height: 40px;
+  position: relative;
+}
+
+.login-box-body .form-control .sr-only {
+  display: none;
+}
+
+.login-box-body .form-control .control-input {
+  width: 315px;
+  height: 34px;
+  line-height: 34px;
+  padding: 2px 10px 2px 30px;
+  border: 1px solid #d8d8d8;
+  color: #333333;
+  background: url("/assets/img/login/phone.png") no-repeat;
+  background-position: 4px;
+}
+
+.login-box-body .form-control .control-input:focus,
+.login-box-body .form-control .control-input:hover {
+  border: 1px solid #f54404;
+  outline: none;
+  -webkit-box-shadow: 0 0 8px rgba(245, 68, 4, .5);
+  -moz-box-shadow: 0 0 8px rgba(245, 68, 4, .5);
+  -o-box-shadow: 0 0 8px rgba(245, 68, 4, .5);
+  box-shadow: 0 0 8px rgba(245, 68, 4, .5);
+}
+
+.login-box-body .form-control .password {
+  background-image: url("/assets/img/login/password.png");
+}
+
+.login-box-body .form-control .show-login-tip {
+  position: absolute;
+  font-size: 13px;
+  color: #ff6666;
+  top: 33px;
+  left: 0;
+}
+
+.login-box-body #quickLog {
+  display: none;
+}
+
+.login-box-body #log_show_captcha {
+  display: none;
+}
+
+.login-box-body .form-control .captcha {
+  width: 215px;
+  background-image: url("/assets/img/login/captcha.png");
+}
+
+.login-box-body .input-right {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 4px;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  width: 100px;
+  color: #fff;
+}
+
+.login-box-body .form-control .code {
+  width: 215px;
+  background-image: url("/assets/img/login/code.png");
+}
+
+.login-box-body .login-btn {
+  font-size: 12px;
+  padding-top: 10px;
+}
+
+.login-box-body .login-btn .active span {
+  background-color: #fb8152;
+  border-color: #fb8152;
+}
+
+.login-box-body .login-btn .forget-password {
+  float: right;
+  color: #F7807D;
+}
+
+.login-box-body .login-btn .forget-password:hover {
+  color: #F94843;
+}
+
+.login-box-body .login-btn .auto-login {
+  cursor: pointer;
+}
+
+.login-box-body .login-btn .auto-login span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #ccc;
+  margin-right: 4px;
+  border-radius: 3px;
+  position: relative;
+  top: 2px;
+}
+
+.login-box-body .btn {
+  cursor: pointer;
+  display: block;
+  margin-top: 14px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 3px;
+}
+
+.login-box-body .btn-enable {
+  background-color: #fb8152;
+}
+
+.login-box-body .btn-enable:hover {
+  background-color: #fc9a75;
+}
+
+.login-box-body .btn-disable {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.login-box-body .btn-disable:hover {
+  background-color: #cccccc;
+}
+
+.login-box-body .register {
+  float: right;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.login-box-body .register a {
+  color: #fb8152;
+}
+
+.login-box-body .register a:hover {
+  color: #fc9a75;
+}

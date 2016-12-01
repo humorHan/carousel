@@ -1,0 +1,28 @@
+@()(implicit pageParam: views.params.PageParam)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @pageMeta()
+    <title>【酱印网】名片_宣传单_折页_展架_画册_印刷_印刷O2O_云印技术</title>
+    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+@newPageHeader()
+
+<div class="content">
+    <div class="index-banner w1200"></div>
+    <div class="standard-floor w1200 auto"></div>
+    <div class="cooperative-partner-wrap w1200 auto">
+        <div class="center">
+            <span class="floor-line block middle"></span>
+            <span class="font24 black bold ml30 mr30 middle">合作伙伴</span>
+            <span class="floor-line block middle"></span>
+        </div>
+        <ul class="cooperative-partner clearFix"></ul>
+    </div>
+</div>
+
+@newPageFooter()
+</body>
+</html>

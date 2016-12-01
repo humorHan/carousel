@@ -1,0 +1,228 @@
+.login-box-shade-layer {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.login-box {
+  display: none;
+  color: #252535;
+  background-color: #fff;
+  width: 420px;
+  min-height: 260px;
+  padding: 20px;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  margin-left: -210px;
+  z-index: 1002;
+  box-sizing: border-box;
+}
+
+.login-box .login-box-head {
+  height: 30px;
+}
+
+.login-box .close {
+  float: right;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: url("/assets/img/close.png") no-repeat;
+}
+
+.login-box .close:hover {
+  background-image: url("/assets/img/close_hover.png");
+}
+
+.login-box .divide-bar {
+  margin-bottom: 0px;
+  border-top: 1px solid #ddd;
+  height: 0px;
+  width: 420px;
+  position: relative;
+  left: -20px;
+}
+
+.login-box .login-box-body {
+  padding: 10px;
+}
+
+.login-box-body .login-type {
+  color: #999999;
+  list-style: none;
+  padding-left: 0px;
+  margin-top: 0px;
+}
+
+.login-box-body .login-type .login-type-checked {
+  color: #fb8152;
+  border-color: #fb8152;
+}
+
+.login-box-body .login-type li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 0px;
+  border-bottom: 1px solid #999;
+  width: 177px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.login-box-body .form-control {
+  margin: 20px 0px;
+  line-height: 40px;
+  position: relative;
+}
+
+.login-box-body .form-control .sr-only {
+  display: none;
+}
+
+.login-box-body .form-control .control-input {
+  font-size: 14px;
+  width: 315px;
+  height: 34px;
+  line-height: 34px;
+  padding: 2px 10px 2px 30px;
+  border: 1px solid #d8d8d8;
+  color: #333333;
+  background: url("/assets/img/login/phone.png") no-repeat;
+  background-position: 4px;
+}
+
+.login-box-body .form-control .control-input:focus,
+.login-box-body .form-control .control-input:hover {
+  border: 1px solid #f54404;
+  outline: none;
+  -webkit-box-shadow: 0 0 8px rgba(245, 68, 4, .5);
+  -moz-box-shadow: 0 0 8px rgba(245, 68, 4, .5);
+  -o-box-shadow: 0 0 8px rgba(245, 68, 4, .5);
+  box-shadow: 0 0 8px rgba(245, 68, 4, .5);
+}
+
+.login-box-body .form-control .password {
+  background-image: url("/assets/img/login/password.png");
+}
+
+.login-box-body .form-control .show-login-tip {
+  position: absolute;
+  font-size: 13px;
+  color: #ff6666;
+  top: 33px;
+  left: 0px;
+}
+
+.login-box-body #quickLog {
+  display: none;
+}
+
+.login-box-body #log_show_captcha {
+  display: none;
+}
+
+.login-box-body .form-control .captcha {
+  width: 215px;
+  background-image: url("/assets/img/login/captcha.png");
+}
+
+.login-box-body .input-right {
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 4px;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  width: 100px;
+  color: #fff;
+}
+
+.login-box-body .form-control .code {
+  width: 215px;
+  background-image: url("/assets/img/login/code.png");
+}
+
+.login-box-body .login-btn {
+  font-size: 12px;
+  padding-top: 10px;
+}
+
+.login-box-body .login-btn .active span {
+  background-color: #fb8152;
+  border-color: #fb8152;
+}
+
+.login-box-body .login-btn .forget-password {
+  float: right;
+  color: #F7807D;
+}
+
+.login-box-body .login-btn .forget-password:hover {
+  color: #F94843;
+}
+
+.login-box-body .login-btn .auto-login {
+  cursor: pointer;
+}
+
+.login-box-body .login-btn .auto-login span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #ccc;
+  margin-right: 4px;
+  border-radius: 3px;
+  position: relative;
+  top: 2px;
+}
+
+.login-box-body .btn {
+  cursor: pointer;
+  display: block;
+  margin-top: 14px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 3px;
+}
+
+.login-box-body .btn-enable {
+  background-color: #fb8152;
+}
+
+.login-box-body .btn-enable:hover {
+  background-color: #fc9a75;
+}
+
+.login-box-body .btn-disable {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.login-box-body .btn-disable:hover {
+  background-color: #cccccc;
+}
+
+.login-box-body .register {
+  float: right;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.login-box-body .register a {
+  color: #fb8152;
+}
+
+.login-box-body .register a:hover {
+  color: #fc9a75;
+}

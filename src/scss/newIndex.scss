@@ -1,0 +1,64 @@
+@import "./common/_color.scss";
+
+.content{
+  background-color: $bg;
+  .index-banner{
+    height: 480px;
+    margin: 0 auto;
+  }
+  .floor-line{
+    height: 1px;
+    width: 260px;
+    background-color: $border;
+  }
+  .cooperative-partner-wrap{
+    padding: 60px 0;
+  }
+  .cooperative-partner{
+    margin-top: 40px;
+  }
+}
+
+.floor-content{
+  & > li {
+    width: 240px;
+    height: 240px;
+    box-sizing: border-box;
+    &.w480 {
+      width: 480px;
+    }
+    .floor-carousel-flag{
+      height: 240px;
+    }
+  }
+  .borderL{
+    border-left: 1px solid $border;
+  }
+  .borderB{
+    border-bottom: 1px solid $border;
+  }
+  .borderT{
+    border-top: 1px solid $border;
+  }
+  .border-box{
+    height: 240px;
+    width: 240px;
+    box-sizing: border-box;
+  }
+  .carousel-wrapper .carousel-nav li{
+    margin-left: 5px;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 8px;
+    background-color: $border;
+    &.active{
+      background-color: $red;
+    }
+  }
+  &.floor-style3{
+    .border-box{
+      height: 241px;
+    }
+  }
+}
