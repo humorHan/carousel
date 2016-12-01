@@ -12,20 +12,7 @@ class\s*=\s*\"\s*([a-zA-z\-0-9]+)(\s+[a-zA-Z\-0-9]+)*\s*\"
 
 
 
-
-
-
-
 //oldLogin.css和登录弹框html还是以前的
-
-
-
-
-
-
-
-
-
 
 
 
@@ -36,4 +23,4 @@ class\s*=\s*\"\s*([a-zA-z\-0-9]+)(\s+[a-zA-Z\-0-9]+)*\s*\"
 
 //正式包
 
-  2. 更改jq的引入(2)以及config文件中图片cdn地址 -> 执行package命令 -> 拷贝出一份不带hash的css和js(新旧项目融合 临时方案)
+  2. 更改jq的引入(2)以及config文件中图片cdn地址 -> 执行package命令
