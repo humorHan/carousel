@@ -2,6 +2,7 @@
  * Created by humorHan on 16/10/31.
  */
 require("./carousel.scss");
+
 require('template-helper.js');
 var config = require("config/config.js");
 var carouselTpl = require('./carousel.tpl');
