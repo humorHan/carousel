@@ -48,16 +48,17 @@ var htmlPlugin = (function () {
             console.error('没有匹配到和html相同文件名的js,请检查!');
             //throw new Error('没有匹配到和html相同文件名的js,请检查!');
         }
-        conf.chunksSortMode = function (chunks) {
-            var orderArr = [];
-            conf.chunks.forEach(function (orderItem) {
-                chunks.forEach(function (item) {
-                    if (item.names[0] == orderItem) {
-                        orderArr.push(item);
-                    }
-                });
-            });
-            return orderArr;
+       conf.chunksSortMode = function (chunk1, chunk2) {
+            var orders = ['vendor', 'newCommon', fileName];
+            var order1 = orders.indexOf(chunk1.names[0]);
+            var order2 = orders.indexOf(chunk2.names[0]);
+            if (order1 > order2) {
+                return 1;
+            } else if (order1 < order2) {
+                return -1;
+            } else {
+                return 0;
+            }
         };
         tempArr.push(new HtmlWebpackPlugin(conf));
     });
